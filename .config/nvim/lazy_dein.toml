@@ -1,0 +1,28 @@
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = [ 'vue' , 'html' ]
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = [ 'vue' ]
+
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = [ 'vue' , 'pug' ]
+
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_source = '''
+" 保存時に必要なimportを自動的に挿入
+let g:go_fmt_command = "goimports"
+" LSPに任せる機能をOFFにする
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+'''
+
+#plantuml
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+# vim:fenc=utf-8 ff=unix ft=conf

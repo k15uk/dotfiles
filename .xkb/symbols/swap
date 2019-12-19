@@ -1,0 +1,48 @@
+partial alphanumeric_keys
+xkb_symbols "escape-tilde" {
+  key <TLDE> { [ Escape   , quoteleft  ] };
+  key <CAPS> { [ Control_L, asciitilde ] };
+  modifier_map Control { <CAPS> };
+};
+
+partial alphanumeric_keys
+xkb_symbols "pcswap" {
+  include "swap(escape-tilde)"
+  modifier_map Control { <LCTL>, <RCTL> };
+};
+
+partial alphanumeric_keys
+xkb_symbols "BSKBB24" {
+	include "altwin(swap_alt_win)"
+  include "swap(escape-tilde)"
+  modifier_map Control { <LCTL> };
+};
+
+partial alphanumeric_keys
+xkb_symbols "TK-FBP067" {
+  include "swap(escape-tilde)"
+
+  key <HZTG> { [ Escape, quoteleft ] };
+
+  key <MUHE> { [ Alt_L, Meta_L ] };
+  key <HENK> { [ Alt_R, Meta_R ] };
+
+  key <LALT> { [ Super_L, Super_L ] };
+  key <HKTG> { [ Super_R, Super_R ] };
+
+  key <LCTL> { [ Control_L, Control_L ] };
+  key <RCTL> { [ Control_R, Control_R ] };
+  key <LWIN> { [ Control_L, Control_L ] };
+  key <MENU> { [ Control_R, Control_R ] };
+  key <RALT> { [ Control_R, Control_R ] };
+
+  key <AC12> { [ Return ]};
+  key <AB11> { [ Shift_L ]};
+  key <AE13> { [ backslash, bar ]};
+  key <RTSH> { [ Shift_L ]};
+
+  modifier_map Mod1    { <MUHE>, <HENK> };
+  modifier_map Mod4    { <LALT>, <HKTG> };
+  modifier_map Shift   { <AB11>, <AE13>, <RTSH> };
+  modifier_map Control { <LCTL>, <RCTL>, <LWIN>, <MENU>, <RALT> };
+};
