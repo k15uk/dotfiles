@@ -182,7 +182,7 @@ if [[ -t 0 ]]; then
   stty start undef
 fi
 
-if [[ ! -n $TMUX ]]; then
+if test -z "${REMOTEHOST}${SSH_CONNECTION}" -a -z $TMUX; then
   # get the IDs
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
