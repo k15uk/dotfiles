@@ -99,14 +99,6 @@ if has ( 'persistent_undo' )
   set undofile
 endif
 
-augroup VimWrapper
-  " autocmd! VimWrapper VimEnter * execute 'RestoreSession'
-  " autocmd! VimWrapper VimLeave * execute 'SaveSession'
-augroup END
-
-command! RestoreSession :source ~/.nvimSession
-command! SaveSession    :mksession! ~/.nvimSession
-
 " #######################
 " # indent space or tab #
 " #######################
