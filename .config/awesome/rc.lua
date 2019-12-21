@@ -38,8 +38,8 @@ rules:set_float_type ( {
 api:set_menu( true )
 api:set_launcher()
 
-keybind:set_keybind( "URxvt" , "urxvt" , "/bin/bash byobu new-window" )
-rules:set_opacity( { { class = 'URxvt', focus_opacity = 0.85 , normal_opacity = 0.7 } } )
+keybind:set_keybind( "Alacritty" , "alacritty" , "/bin/bash byobu new-window" )
+rules:set_opacity( { { class = 'Alacritty', focus_opacity = 0.85 , normal_opacity = 0.7 } } )
 
 rules:set_rules()
 
@@ -76,7 +76,7 @@ launcher:set_tag_groups( tag_groups )
 api:add_center_layout(
   launcher:create( {
     { 'Chromium'    , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
-    { 'URxvt'       , 'urxvt'              , '/usr/share/pixmaps/nvim.png'                                  } ,
+    { 'Alacritty'   , 'alacritty'          , '/usr/share/pixmaps/nvim.png'                                  } ,
     { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png'} ,
     { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
     { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
