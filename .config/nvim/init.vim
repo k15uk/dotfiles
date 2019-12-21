@@ -140,37 +140,9 @@ nnoremap x "_x
 nnoremap s <Nop>
 nnoremap <C-z> <Nop>
 
-" ウインドウの移動
-nnoremap <silent><C-h> :wincmd h<CR>
-nnoremap <silent><C-j> :wincmd j<CR>
-nnoremap <silent><C-k> :wincmd k<CR>
-nnoremap <silent><C-l> :wincmd l<CR>
-
-nnoremap <silent><Left>  :wincmd h<CR>
-nnoremap <silent><Down>  :wincmd j<CR>
-nnoremap <silent><Up>    :wincmd k<CR>
-nnoremap <silent><Right> :wincmd l<CR>
-nnoremap <silent>ww :wincmd w<CR>
-
-nnoremap <silent><S-Left>  :wincmd h<CR>
-nnoremap <silent><S-Down>  :wincmd j<CR>
-nnoremap <silent><S-Up>    :wincmd k<CR>
-nnoremap <silent><S-Right> :wincmd l<CR>
-
-tnoremap <silent><S-Left>  <C-\><C-n>:wincmd h<CR>
-tnoremap <silent><S-Down>  <C-\><C-n>:wincmd j<CR>
-tnoremap <silent><S-Up>    <C-\><C-n>:wincmd k<CR>
-tnoremap <silent><S-Right> <C-\><C-n>:wincmd l<CR>
-
-" ウィンドウサイズの変更
-nnoremap <silent>+ :wincmd ><CR>
-nnoremap <silent>_ :wincmd <<CR>
-nnoremap <silent>= :wincmd +<CR>
-nnoremap <silent>- :wincmd -<CR>
-
-" ウインドウを分割
-nnoremap <silent>so :only<CR>
-nnoremap <silent>sc :close<CR>
+" バッファの移動
+nnoremap <silent><Tab>   :bnext<CR>
+nnoremap <silent><S-Tab> :bprev<CR>
 
 " ウインドウの移動のモード差異をなくす
 inoremap <C-w> <Esc><C-w>
@@ -180,13 +152,21 @@ tnoremap <C-w> <C-\><C-n><C-w>
 nnoremap q: <nop>
 nnoremap Q <nop>
 
-" 端末モードでのモード変更
-tnoremap <Esc><Esc> <C-\><C-n>
+" alternate :q
+cabbrev <silent>q call CloseBuffer()
+" alternate :Wq/wq
+command! -nargs=0 Wq w | call CloseBuffer()
+cabbrev <silent>wq Wq
 
-" 端末クリックでの挿入モード解除対策
-tnoremap <LeftRelease> <Nop>
-nnoremap <expr> <LeftMouse> &buftype ==# 'terminal' ? '<cmd>startinsert<cr>' : ''
-nnoremap <expr> <CR> &buftype ==# 'terminal' ? '<cmd>startinsert<cr>' : ''
+function! CloseBuffer()
+  for l:i in range( 1, bufnr( '$' ) )
+    if bufloaded( bufnr( l:i ) ) && l:i != bufnr( '%' )
+      bw
+      return
+    endif
+  endfor
+  quit
+endfunction
 
 " ##########
 " # etc... #

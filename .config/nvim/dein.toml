@@ -58,54 +58,6 @@ nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 '''
 
 [[plugins]]
-repo = 'k15uk/blm'
-hook_add = '''
-" ウインドウを分割
-nnoremap <silent>sj :call blm#split_window('down' )<CR>
-nnoremap <silent>sk :call blm#split_window('up'   )<CR>
-nnoremap <silent>sh :call blm#split_window('left' )<CR>
-nnoremap <silent>sl :call blm#split_window('right')<CR>
-
-nnoremap <silent><C-f>j           :call blm#split_terminal('down' )<CR>
-nnoremap <silent><C-f>k           :call blm#split_terminal('up'   )<CR>
-nnoremap <silent><C-f>h           :call blm#split_terminal('left' )<CR>
-nnoremap <silent><C-f>l           :call blm#split_terminal('right')<CR>
-tnoremap <silent><C-f>j <C-\><C-n>:call blm#split_terminal('down' )<CR>
-tnoremap <silent><C-f>k <C-\><C-n>:call blm#split_terminal('up'   )<CR>
-tnoremap <silent><C-f>h <C-\><C-n>:call blm#split_terminal('left' )<CR>
-tnoremap <silent><C-f>l <C-\><C-n>:call blm#split_terminal('right')<CR>
-
-" バッファを切り替え
-nnoremap <Tab>               :call blm#change_buffer(0,-1)<CR>
-nnoremap <S-Tab>             :call blm#change_buffer(1,-1)<CR>
-nnoremap <M-Tab>             :call blm#change_buffer(0, 0)<CR>
-nnoremap <M-S-Tab>           :call blm#change_buffer(1, 0)<CR>
-tnoremap <M-Tab>   <C-\><C-n>:call blm#change_buffer(0, 0)<CR>
-tnoremap <M-S-Tab> <C-\><C-n>:call blm#change_buffer(1, 0)<CR>
-
-nnoremap <silent><M-.>           :call blm#switch_layout(0)<CR>
-inoremap <silent><M-.> <Esc>     :call blm#switch_layout(0)<CR>
-tnoremap <silent><M-.> <C-\><C-n>:call blm#switch_layout(0)<CR>
-nnoremap <silent><M-,>           :call blm#switch_layout(1)<CR>
-inoremap <silent><M-,> <Esc>     :call blm#switch_layout(1)<CR>
-tnoremap <silent><M-,> <C-\><C-n>:call blm#switch_layout(1)<CR>
-
-" プレビューウインドウでの端末のトグル
-nnoremap <silent><M-Space>           :call blm#toggle_preview_terminal()<CR>
-inoremap <silent><M-Space> <Esc>     :call blm#toggle_preview_terminal()<CR>
-tnoremap <silent><M-Space> <C-\><C-n>:call blm#toggle_preview_terminal()<CR>
-
-" 新しいウインドウで端末を開く
-nnoremap <silent><M-Enter>           :call blm#add_layout()<CR>
-inoremap <silent><M-Enter> <Esc>     :call blm#add_layout()<CR>
-tnoremap <silent><M-Enter> <C-\><C-n>:call blm#add_layout()<CR>
-
-nnoremap <silent><M-t>           :call blm#add_terminal()<CR>
-inoremap <silent><M-t> <Esc>     :call blm#add_terminal()<CR>
-tnoremap <silent><M-t> <C-\><C-n>:call blm#add_terminal()<CR>
-'''
-
-[[plugins]]
 repo = 'k15uk/lsp_sidebar.vim'
 hook_add = '''
 nnoremap <silent><leader>j :call lsp_sidebar#toggle()<CR>
@@ -297,11 +249,8 @@ let g:lightline = {
   \               [ 'fileencoding', 'fileformat', 'filetype' ]
   \             ],
   \           },
-  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
   \ 'component_function': {
   \   'fugitive': 'LightlineFugitive',
-  \   'blm' : 'LightlineBlm'
   \   },
   \ }
 function! LightlineFugitive()
@@ -310,10 +259,6 @@ function! LightlineFugitive()
   else
     return ''
   endif
-endfunction
-
-function! LightlineBlm()
-  return blm#get_layouts()
 endfunction
 '''
 

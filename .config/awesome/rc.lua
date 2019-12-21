@@ -38,8 +38,8 @@ rules:set_float_type ( {
 api:set_menu( true )
 api:set_launcher()
 
-keybind:set_keybind( "NeovimGtk" , "GTK_THEME=nvim nvim-gtk" )
-rules:set_opacity( { { class = 'NeovimGtk', focus_opacity = 0.85 , normal_opacity = 0.75 } } )
+keybind:set_keybind( "URxvt" , "urxvt -e byobu -2" , "/bin/bash byobu new-window" )
+rules:set_opacity( { { class = 'URxvt', focus_opacity = 1 , normal_opacity = 0.9 } } )
 
 rules:set_rules()
 
@@ -75,18 +75,18 @@ launcher:set_tag_groups( tag_groups )
 
 api:add_center_layout(
   launcher:create( {
-    { 'Chromium'           , 'chromium'                , '/usr/share/icons/Windows10/48x48/apps/chromium-browser.png'   , false } ,
-    { 'NeovimGtk'          , 'GTK_THEME=nvim nvim-gtk' , '/usr/share/icons/hicolor/48x48/apps/org.daa.NeovimGtk.png'    , true  } ,
-    { 'Pcmanfm'            , 'pcmanfm'                 , '/usr/share/icons/Windows10/48x48/apps/system-file-manager.png', true  } ,
-    { 'Gitg'               , 'gitg'                    , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       , false } ,
-    { 'Mysql-workbench-bin', 'mysql-workbench'         , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      , false } ,
-    { 'xpad'               , 'xpad'                    , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              , false } ,
-    { 'Gimp'               , 'gimp'                    , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 , false } ,
-    { 'Inkscape'           , 'inkscape'                , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             , false } ,
-    { 'keepassxc'          , 'keepassxc'               , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            , false } ,
-    { 'LibreOffice'        , 'libreoffice'             , '/usr/share/icons/Windows10/48x48/apps/libreoffice-main.png'   , false } ,
-    { 'Evolution'          , 'evolution'               , '/usr/share/icons/Windows10/48x48/apps/evolution.png'          , false } ,
-    { 'Ario'               , 'ario'                    , '/usr/share/icons/Windows10/48x48/apps/rhythmbox.png'          , false } ,
+    { 'Chromium'           , 'chromium'         , '/usr/share/icons/Windows10/48x48/apps/chromium-browser.png'   } ,
+    { 'URxvt'              , 'urxvt -e byobu -2', '/usr/share/icons/hicolor/48x48/apps/org.daa.NeovimGtk.png'    } ,
+    { 'Pcmanfm'            , 'pcmanfm'          , '/usr/share/icons/Windows10/48x48/apps/system-file-manager.png'} ,
+    { 'Gitg'               , 'gitg'             , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
+    { 'Mysql-workbench-bin', 'mysql-workbench'  , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
+    { 'xpad'               , 'xpad'             , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
+    { 'Gimp'               , 'gimp'             , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
+    { 'Inkscape'           , 'inkscape'         , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
+    { 'keepassxc'          , 'keepassxc'        , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
+    { 'LibreOffice'        , 'libreoffice'      , '/usr/share/icons/Windows10/48x48/apps/libreoffice-main.png'   } ,
+    { 'Evolution'          , 'evolution'        , '/usr/share/icons/Windows10/48x48/apps/evolution.png'          } ,
+    { 'Ario'               , 'ario'             , '/usr/share/icons/Windows10/48x48/apps/rhythmbox.png'          } ,
   } )
 )
 

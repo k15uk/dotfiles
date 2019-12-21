@@ -23,8 +23,9 @@ local shift = "Shift"
 local client_keys = nil
 local client_buttons = nil
 
-local terminal
 local terminal_class
+local terminal_command
+local terminal_add_command
 
 function keybind:get_client_keys()
   return client_keys
@@ -55,12 +56,14 @@ local display_terminal = function ()
     end
   end
   if ( cl == nil ) then
-    awful.spawn.with_shell( terminal )
+    awful.spawn.with_shell( terminal_command )
     return
   elseif ( cl:tags()[1] ~= tag ) then
     cl:move_to_tag( tag )
   elseif ( capi.client.focus ~= cl ) then
     capi.client.focus = cl
+  else
+    awful.spawn.with_shell( terminal_add_command )
   end
   cl.minimized = false
 end
@@ -243,9 +246,10 @@ local set_client_key = function ()
   )
 end
 
-function keybind:set_keybind( cls , cmd )
+function keybind:set_keybind( cls , cmd , add )
   terminal_class = cls
-  terminal = cmd
+  terminal_command = cmd
+  terminal_add_command = add
   set_global_key()
   set_client_key()
   set_mouse_emulate()
