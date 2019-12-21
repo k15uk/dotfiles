@@ -109,6 +109,9 @@ repo = 'prabirshrestha/vim-lsp'
 depends = [ 'async.vim' ]
 
 hook_add = '''
+au User lsp_setup call <sid>lsp_load()
+
+function! s:lsp_load()
   setlocal omnifunc=lsp#complete
   nnoremap <silent><C-b> :LspDefinition<CR>
   nnoremap <silent><C-h> :LspHover<CR>
@@ -223,6 +226,7 @@ hook_add = '''
     \ 'whitelist': ['ruby'],
     \ })
   endif
+endfunction!
 '''
 
 [[plugins]]
