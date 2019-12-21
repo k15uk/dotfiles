@@ -5,6 +5,25 @@ require( "awful.autofocus" ) --autofocus
 require( "rc/errors" )
 
 require( "beautiful" ).init( os.getenv( "HOME" ) .. "/.config/awesome/theme.lua" )
+
+local f = io.popen ("/bin/hostname")
+local hostname = f:read("*a") or ""
+f:close()
+hostname =string.gsub(hostname, "\n$", "")
+
+local cocco
+local terminal_class
+local terminal_cmd
+if hostname == 'cocco' then
+  cocco = true
+  terminal_class = 'Alacritty'
+  terminal_cmd   = 'alacritty'
+else
+  cocco = false
+  terminal_class = 'Terminology'
+  terminal_cmd   = 'terminology'
+end
+
 api:set_layouts( { require( "awful" ).layout.suit.tile } )
 
 rules:set_float_class( {
@@ -38,8 +57,8 @@ rules:set_float_type ( {
 api:set_menu( true )
 api:set_launcher()
 
-keybind:set_keybind( "Alacritty" , "alacritty" , "/bin/bash byobu new-window" )
-rules:set_opacity( { { class = 'Alacritty', focus_opacity = 0.85 , normal_opacity = 0.7 } } )
+keybind:set_keybind( terminal_class , terminal_cmd , "/bin/bash byobu new-window" )
+rules:set_opacity( { { class = terminal_class , focus_opacity = 0.85 , normal_opacity = 0.7 } } )
 
 rules:set_rules()
 
@@ -76,7 +95,7 @@ launcher:set_tag_groups( tag_groups )
 api:add_center_layout(
   launcher:create( {
     { 'Chromium'    , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
-    { 'Alacritty'   , 'alacritty'          , '/usr/share/pixmaps/nvim.png'                                  } ,
+    { terminal_class, terminal_cmd         , '/usr/share/pixmaps/nvim.png'                                  } ,
     { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png'} ,
     { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
     { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
@@ -100,15 +119,9 @@ local datewidget = widget:date( " %m/%d %a %H:%M:%S " , 1 , "Asia/Tokyo" )
 local calendar = require( "calendar" )
 if calendar ~= nil then calendar.set( datewidget ) end
 
-local f = io.popen ("/bin/hostname")
-
-local hostname = f:read("*a") or ""
-f:close()
-hostname =string.gsub(hostname, "\n$", "")
-
 api:add_right_layout( apw )
 
-if hostname == 'cocco' then
+if cocco then
   api:add_right_layout( brightness:create( 'HDMI-0' , 10 ) )
   api:add_right_layout( widget:wifi( 'wlan0' , 'WIFI' , 1 ) )
 else
@@ -117,7 +130,7 @@ end
 
 api:add_right_layout( widget:cpu( "CPU" , 1 ) )
 
-if hostname == 'cocco' then
+if cocco then
   api:add_right_layout( widget:cputemp( 1 ) )
   api:add_right_layout( widget:ram( "RAM" , 1 ) )
   api:add_right_layout( widget:swap( "SWAP" , 1 ) )
@@ -125,7 +138,7 @@ end
 
 api:add_right_layout( datewidget )
 
-if hostname == 'cocco' then
+if cocco then
   brightness:timer({
     '-0.01', -- 01:00
     '-0.01', -- 02:00
@@ -154,7 +167,7 @@ if hostname == 'cocco' then
   })
 end
 
-if hostname == 'cocco' then
+if cocco then
   api:set_wibar( 22 )
 else
   api:set_wibar( 32 )
