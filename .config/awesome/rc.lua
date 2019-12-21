@@ -65,28 +65,28 @@ launcher:set_vertical_margin( 5 )
 
 local tag_groups = {
   "Gimp" , "Sk1" , "Inkscape" , "Gthumb" , "XnViewMP",
-  "jetbrains-idea-ce" , "Mysql-workbench-bin" , "Gitg",
+  "jetbrains-idea-ce" , "MySQL" , "Gitg",
   "Ario", "Rhythmbox" , "Easytag"  ,
   "Evolution" ,
-  "Skype"  ,
+  "Skype" , "Pidgin" ,
   "LibreOffice",
 }
 launcher:set_tag_groups( tag_groups )
 
 api:add_center_layout(
   launcher:create( {
-    { 'Chromium'           , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
-    { 'URxvt'              , 'urxvt'              , '/usr/share/pixmaps/nvim.png'                                  } ,
-    { 'Pcmanfm'            , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png'} ,
-    { 'Gitg'               , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
-    { 'Mysql-workbench-bin', 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
-    { 'xpad'               , 'xpad'               , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
-    { 'Gimp'               , 'gimp'               , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
-    { 'Inkscape'           , 'inkscape'           , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
-    { 'keepassxc'          , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
-    { 'LibreOffice'        , 'libreoffice --calc' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
-    { 'Evolution'          , 'evolution'          , '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png'       } ,
-    { 'Ario'               , 'ario'               , '/usr/share/icons/hicolor/48x48/apps/ario.png'                 } ,
+    { 'Chromium'    , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
+    { 'URxvt'       , 'urxvt'              , '/usr/share/pixmaps/nvim.png'                                  } ,
+    { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png'} ,
+    { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
+    { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
+    { 'xpad'        , 'xpad'               , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
+    { 'Gimp'        , 'gimp'               , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
+    { 'Inkscape'    , 'inkscape'           , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
+    { 'keepassxc'   , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
+    { 'LibreOffice' , 'libreoffice --calc' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
+    { 'Evolution'   , 'evolution'          , '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png'       } ,
+    { 'Ario'        , 'ario'               , '/usr/share/icons/hicolor/48x48/apps/ario.png'                 } ,
   } )
 )
 
@@ -108,13 +108,11 @@ hostname =string.gsub(hostname, "\n$", "")
 
 api:add_right_layout( apw )
 
-if hostname == 'tablet' then
-  api:add_right_layout( widget:battery( "Battery" , 60 ) )
-end
-
 if hostname == 'cocco' then
   api:add_right_layout( brightness:create( 'HDMI-0' , 10 ) )
   api:add_right_layout( widget:wifi( 'wlan0' , 'WIFI' , 1 ) )
+else
+  api:add_right_layout( widget:battery( "Battery" , 60 ) )
 end
 
 api:add_right_layout( widget:cpu( "CPU" , 1 ) )
@@ -127,34 +125,40 @@ end
 
 api:add_right_layout( datewidget )
 
-brightness:timer({
-  '-0.01', -- 01:00
-  '-0.01', -- 02:00
-  '-0.01', -- 03:00
-  '0'    , -- 04:00
-  '0.01' , -- 05:00
-  '0.01' , -- 06:00
-  '0.01' , -- 07:00
-  '0.01' , -- 08:00
-  '0.01' , -- 09:00
-  '0.01' , -- 10:00
-  '0.01' , -- 11:00
-  '0.01' , -- 12:00
-  '0.01' , -- 13:00
-  '0'    , -- 14:00
-  '0'    , -- 15:00
-  '0'    , -- 16:00
-  '0'    , -- 17:00
-  '0'    , -- 18:00
-  '-0.01', -- 19:00
-  '-0.01', -- 20:00
-  '-0.01', -- 21:00
-  '-0.01', -- 22:00
-  '-0.01', -- 23:00
-  '-0.01', -- 24:00
-})
+if hostname == 'cocco' then
+  brightness:timer({
+    '-0.01', -- 01:00
+    '-0.01', -- 02:00
+    '-0.01', -- 03:00
+    '0'    , -- 04:00
+    '0.01' , -- 05:00
+    '0.01' , -- 06:00
+    '0.01' , -- 07:00
+    '0.01' , -- 08:00
+    '0.01' , -- 09:00
+    '0.01' , -- 10:00
+    '0.01' , -- 11:00
+    '0.01' , -- 12:00
+    '0.01' , -- 13:00
+    '0'    , -- 14:00
+    '0'    , -- 15:00
+    '0'    , -- 16:00
+    '0'    , -- 17:00
+    '0'    , -- 18:00
+    '-0.01', -- 19:00
+    '-0.01', -- 20:00
+    '-0.01', -- 21:00
+    '-0.01', -- 22:00
+    '-0.01', -- 23:00
+    '-0.01', -- 24:00
+  })
+end
 
-api:set_wibar( 22 )
+if hostname == 'cocco' then
+  api:set_wibar( 22 )
+else
+  api:set_wibar( 32 )
+end
 
 require( "wallpaper" ):create( 3600 , os.getenv('HOME').."/images/wallpaper" )
 -- require( "wallpaper" ):set( os.getenv('HOME').."/images/wallpaper/DSC_0613.JPG" )
