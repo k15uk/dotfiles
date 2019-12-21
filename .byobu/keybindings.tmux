@@ -11,10 +11,10 @@ bind -n C-left  select-pane -L
 bind -n C-up    select-pane -U
 bind -n C-down  select-pane -D
 
-bind -n A-, next-window
-bind -n A-. previous-window
+bind -n M-, next-window
+bind -n M-. previous-window
 
-bind -n C-Tab select-pane -t :.+
+bind -n M-Tab select-pane -t :.+
 
 bind x kill-pane
 
