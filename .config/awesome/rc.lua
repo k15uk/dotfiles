@@ -156,5 +156,5 @@ brightness:timer({
 
 api:set_wibar( 22 )
 
---require( "wallpaper" ):create( 3600 , os.getenv('HOME').."/images/wallpaper" )
-require( "wallpaper" ):set( os.getenv('HOME').."/images/wallpaper/DSC_0613.JPG" )
+require( "wallpaper" ):create( 3600 , os.getenv('HOME').."/images/wallpaper" )
+-- require( "wallpaper" ):set( os.getenv('HOME').."/images/wallpaper/DSC_0613.JPG" )
