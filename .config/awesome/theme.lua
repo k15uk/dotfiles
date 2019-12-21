@@ -34,6 +34,6 @@ theme.apw_bg_color      = theme.bg_minimize
 theme.apw_mute_fg_color = theme.bg_urgent
 theme.apw_mute_bg_color = theme.bg_minimize
 theme.apw_show_text     = true
-theme.apw_text_colot    = theme.fg_focus
+theme.apw_text_color    = theme.fg_focus
 
 return theme
