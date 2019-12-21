@@ -38,8 +38,8 @@ rules:set_float_type ( {
 api:set_menu( true )
 api:set_launcher()
 
-keybind:set_keybind( "URxvt" , "urxvt -e byobu -2" , "/bin/bash byobu new-window" )
-rules:set_opacity( { { class = 'URxvt', focus_opacity = 1 , normal_opacity = 0.9 } } )
+keybind:set_keybind( "URxvt" , "urxvt" , "/bin/bash byobu new-window" )
+rules:set_opacity( { { class = 'URxvt', focus_opacity = 0.85 , normal_opacity = 0.7 } } )
 
 rules:set_rules()
 
