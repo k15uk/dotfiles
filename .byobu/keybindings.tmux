@@ -18,10 +18,10 @@ bind -n M-Tab select-pane -t :.+
 
 bind x kill-pane
 
-bind -n C- resize-pane -R
-bind -n C- resize-pane -L
-bind -n C- resize-pane -U
-bind -n C- resize-pane -D
+bind -n S-right resize-pane -R
+bind -n S-left  resize-pane -L
+bind -n S-up    resize-pane -U
+bind -n S-down  resize-pane -D
 
 #コピーモードの設定--------------------------------
 #キーバインドをviにする
