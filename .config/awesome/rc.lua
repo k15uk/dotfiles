@@ -20,7 +20,7 @@ if hostname == 'cocco' then
   terminal_cmd   = 'alacritty'
 else
   cocco = false
-  terminal_class = 'Terminology'
+  terminal_class = 'terminology'
   terminal_cmd   = 'terminology'
 end
 
