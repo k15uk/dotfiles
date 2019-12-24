@@ -122,7 +122,7 @@ if calendar ~= nil then calendar.set( datewidget ) end
 api:add_right_layout( apw )
 
 if cocco then
-  api:add_right_layout( brightness:create( 'HDMI-0' , 10 ) )
+  api:add_right_layout( brightness:create( 'HDMI-0' , 30 ) )
   api:add_right_layout( widget:wifi( 'wlan0' , 'WIFI' , 1 ) )
 else
   api:add_right_layout( widget:battery( "Battery" , 60 ) )
