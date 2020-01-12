@@ -151,14 +151,10 @@ bindkey "^D" delete-char-or-list # this is default, important!
 #bindkey "^F" forward-char
 #bindkey "^G" send-break
 #bindkey "^H" backward-delete-char
-bindkey -r "^H" # bind cursor key by window manager
 #bindkey "^I" expand-or-complete
 #bindkey "^J" accept-line
-bindkey -r "^J" # bind cursor key by window manager
 #bindkey "^K" kill-line
-bindkey -r "^K" # bind cursor key by window manager
 #bindkey "^L" clear-screen
-bindkey -r "^L" # bind cursor key by window manager
 #bindkey "^M" accept-line
 #bindkey "^N" down-line-or-history
 bindkey -r "^N" # bind backspace by window manager
