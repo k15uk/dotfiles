@@ -59,7 +59,8 @@ function api:get_menu()
 end
 
 function api:set_menu( powermanagement )
-  local menu_after = { { "Awesome Restart", capi.awesome.restart , beautiful.awesome_icon } }
+  local menu_after = { { "Awesome Restart", capi.awesome.restart , beautiful.awesome_icon },
+                       { "Awesome Quit", function() capi.awesome.quit() end }}
 
   if powermanagement then
     table.insert( menu_after, { "PowerManagement" , {
