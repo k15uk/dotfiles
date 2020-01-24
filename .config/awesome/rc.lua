@@ -80,9 +80,9 @@ if pm ~= nil then api:add_left_layout( pm:create( nil ) ) end
 api:add_left_layout( mpdinstance.widget )
 
 local launcher = require( 'launcher' )
-launcher:set_vertical_margin( 5 )
 
 local tag_groups = {
+  "Chromium" ,
   "Gimp" , "Sk1" , "Inkscape" , "Gthumb" , "XnViewMP",
   "jetbrains-idea-ce" , "MySQL" , "Gitg",
   "Ario", "Rhythmbox" , "Easytag"  ,
