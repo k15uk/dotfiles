@@ -168,19 +168,5 @@ if [[ -t 0 ]]; then
 fi
 
 if test -z "${REMOTEHOST}${SSH_CONNECTION}" -a -z $TMUX; then
-  # get the IDs
-  ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    byobu new-session && exit
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $PERCOL | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    byobu new-session
-  elif [[ -n "$ID" ]]; then
-    byobu attach-session -t "$ID"
-  else
-    :  # Start terminal normally
-  fi
+  byobu new-session && exit
 fi
