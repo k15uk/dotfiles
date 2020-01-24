@@ -74,17 +74,6 @@ else
   prompt_color="158"
 fi
 
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  export VISUAL="nvr -cc split --remote-wait +'setlocal bufhidden=wipe'"
-  export GIT_EDITOR="nvr -cc split --remote-wait"
-  export EDITOR="nvr"
-  alias vi="nvr"
-  alias vim="vi"
-  alias nvim="vi"
-  alias nvi="vi"
-  alias v="vi"
-fi
-
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
