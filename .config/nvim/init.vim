@@ -150,14 +150,28 @@ cabbrev <silent>q call CloseBuffer()
 command! -nargs=0 Wq w | call CloseBuffer()
 cabbrev <silent>wq Wq
 
-function! CloseBuffer()
-  for l:i in range( 1, bufnr( '$' ) )
-    if bufloaded( bufnr( l:i ) ) && l:i != bufnr( '%' )
-      bw
-      return
+" 開いているバッファを数える
+function! GetBufCount()
+  let l:count=0
+  for i in range( 1 , bufnr('$') )
+    if buflisted(i)
+      let l:count = l:count + 1
     endif
   endfor
-  quit
+  return l:count
+endfunction
+
+function! CloseBuffer()
+  " q: ( command line window ) を閉じる
+  if getcmdwintype()!=''
+    quit
+  " 最後のバッファならvimごと閉じる
+  elseif GetBufCount()<=1
+    quit
+  " バッファを閉じる
+  else
+    bd
+  endif
 endfunction
 
 " ##########
