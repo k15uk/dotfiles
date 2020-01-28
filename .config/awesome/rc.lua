@@ -97,10 +97,10 @@ api:add_center_layout(
     { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
     { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
     { 'xpad'        , 'xpad'               , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
-    { 'Gimp'        , 'gimp'               , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
+    { 'Gimp'        , 'gimp --no-splash'   , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
     { 'Inkscape'    , 'inkscape'           , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
     { 'KeePassXC'   , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
-    { 'LibreOffice' , 'libreoffice --calc' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
+    { 'LibreOffice' , 'libreoffice --calc --nologo' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
     { 'Evolution'   , 'evolution'          , '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png'       } ,
     { 'Ario'        , 'ario'               , '/usr/share/icons/hicolor/48x48/apps/ario.png'                 } ,
   } )
