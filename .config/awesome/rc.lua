@@ -120,7 +120,7 @@ api:add_right_layout( apw )
 
 if cocco then
   api:add_right_layout( brightness:create( 'HDMI-0' , 30 ) )
-  api:add_right_layout( widget:wifi( 'wlan0' , 'WIFI' , 1 ) )
+  api:add_right_layout( widget:wifi( 'wlp0s29u1u7' , 'WIFI' , 1 ) )
 else
   api:add_right_layout( widget:battery( "Battery" , 60 ) )
 end
