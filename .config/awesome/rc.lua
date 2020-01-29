@@ -128,9 +128,9 @@ end
 api:add_right_layout( widget:cpu( "CPU" , 1 ) )
 
 if cocco then
-  api:add_right_layout( widget:cputemp( 1 ) )
-  api:add_right_layout( widget:ram( "RAM" , 1 ) )
-  api:add_right_layout( widget:swap( "SWAP" , 1 ) )
+  api:add_right_layout( widget:cputemp( 10 ) )
+  api:add_right_layout( widget:ram( "RAM" , 60 ) )
+  api:add_right_layout( widget:swap( "SWAP" , 60 ) )
 end
 
 api:add_right_layout( datewidget )
