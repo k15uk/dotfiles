@@ -184,17 +184,7 @@ augroup END
 
 augroup autoreload
   autocmd! BufWritePost *.md,*.uml,*.plantuml call s:autoreload()
-  autocmd! BufWritePost *.vue call s:vueautoreload()
 augroup END
-
-function! s:vueautoreload()
-  let l:file_title = expand('%:t')
-  let l:browser_title = system( 'xdotool search --onlyvisible --class chromium getwindowname' )
-  let l:terminal = system( 'xdotool getactivewindow' )
-  call system( 'xdotool windowactivate $(xdotool search --onlyvisible --name chromium )' )
-  call system( 'xdotool key --delay 1500 ctrl+r' )
-  call system( 'xdotool windowactivate ' . l:terminal )
-endfunction
 
 function! s:autoreload()
   let l:file_title = expand('%:t')
