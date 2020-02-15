@@ -223,6 +223,8 @@ local set_global_key = function ()
   -- tab manaement
   for i = 1,9 do
     bindkeys( { sup } ,  "#" .. i + 9 ,
+      function () launcher:tag_change( i ) end )
+    bindkeys( { sup , shift } ,  "#" .. i + 9 ,
       function () launcher:launch( i ) end )
   end
 end
