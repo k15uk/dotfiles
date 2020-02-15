@@ -84,7 +84,7 @@ local launcher = require( 'launcher' )
 
 local tag_groups = {
   "Chromium" ,
-  "Gimp" , "Sk1" , "Inkscape" , "Gthumb" , "XnViewMP",
+  "Gimp" , "Sk1" , "Inkscape" , "Gthumb" , "XnView",
   "jetbrains-idea-ce" , "MySQL" , "Gitg",
   "Ario", "Rhythmbox" , "Easytag"  ,
   "Evolution" ,
