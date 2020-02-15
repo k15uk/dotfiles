@@ -21,8 +21,8 @@ if hostname == 'cocco' then
   terminal_cmd   = 'alacritty'
 else
   cocco = false
-  terminal_class = 'URxvt'
-  terminal_cmd   = 'urxvt'
+  terminal_class = 'Terminator'
+  terminal_cmd   = 'terminator'
 end
 
 api:set_layouts( { require( "awful" ).layout.suit.tile } )
