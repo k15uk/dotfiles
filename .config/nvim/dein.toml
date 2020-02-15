@@ -212,7 +212,7 @@ let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'active': {
   \   'left'  : [ [ 'mode', 'paste' ],
-  \               [ 'filename' , 'fugitive', 'readonly'],
+  \               [ 'filename' , 'readonly'],
   \               [ 'modified' ]
   \             ],
   \    'right' : [ [ 'lineinfo'],
@@ -221,26 +221,11 @@ let g:lightline = {
   \             ],
   \           },
   \ 'component_function': {
-  \   'fugitive': 'LightlineFugitive',
   \   },
   \ }
-function! LightlineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-  else
-    return ''
-  endif
-endfunction
 '''
 
 # git
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = '''
-nnoremap <silent>gl :Glog<CR>
-nnoremap <silent>gb :Gblame<CR>
-'''
-
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
