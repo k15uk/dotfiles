@@ -100,7 +100,6 @@ api:add_center_layout(
     { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/places/folder.png'             } ,
     { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
     { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
-    { 'xpad'        , 'xpad'               , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
     { 'Gimp'        , 'gimp --no-splash'   , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
     { 'Inkscape'    , 'inkscape'           , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
     { 'KeePassXC'   , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
