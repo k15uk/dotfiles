@@ -96,8 +96,8 @@ launcher:set_tag_groups( tag_groups )
 api:add_center_layout(
   launcher:create( {
     { 'Chromium'    , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
-    { terminal_class, terminal_cmd         , '/usr/share/pixmaps/nvim.png'                                  } ,
-    { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png'} ,
+    { terminal_class, terminal_cmd         , '/usr/share/icons/Adwaita/48x48/legacy/utilities-terminal.png' } ,
+    { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/places/folder.png'             } ,
     { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
     { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
     { 'xpad'        , 'xpad'               , '/usr/share/icons/hicolor/scalable/apps/xpad.svg'              } ,
