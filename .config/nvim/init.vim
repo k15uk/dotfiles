@@ -73,7 +73,6 @@ set noswapfile "スワップファイルをつくらない
 set shell=zsh " shellはzsh使用
 set splitbelow " プレビューウィンドウを下に
 set ambiwidth=double
-set cursorline
 
 set inccommand=split
 
@@ -91,7 +90,6 @@ highlight NonText     ctermbg=black guibg=none
 highlight LineNr      ctermbg=black guibg=none
 highlight Folded      ctermbg=black guibg=none
 highlight EndOfBuffer ctermbg=black guibg=none
-highlight CursorLine  ctermbg=233   guibg=gray8
 
 " 閉じた後でもundoする
 if has ( 'persistent_undo' )

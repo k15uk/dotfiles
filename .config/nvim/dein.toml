@@ -231,31 +231,10 @@ repo = 'airblade/vim-gitgutter'
 
 #コメントをトグル
 [[plugins]]
-repo = 'scrooloose/nerdcommenter.git'
+repo = 'tomtom/tcomment_vim'
 hook_add = '''
-let NERDSpaceDelims = 1
-nmap ,, <Plug>NERDCommenterToggle
-vmap ,, <Plug>NERDCommenterToggle
-
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
+  nnoremap ,, :TComment<CR>
+  vnoremap ,, :TComment<CR>
 '''
 
 # vim:fenc=utf-8 ff=unix ft=conf
