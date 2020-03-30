@@ -97,10 +97,10 @@ function! s:lsp_load()
     \ })
   endif
 
-  if executable('intelephense-server')
+  if executable('php-language-server')
     call lsp#register_server({
-    \ 'name': 'intelephense-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'intelephense-server --stdio']},
+    \ 'name': 'php-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'php-language-server']},
     \ 'whitelist': ['php'],
     \ })
   endif
