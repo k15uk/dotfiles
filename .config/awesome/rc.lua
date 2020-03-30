@@ -63,22 +63,9 @@ rules:set_opacity( { { class = terminal_class , focus_opacity = 0.95 , normal_op
 
 rules:set_rules()
 
-local awesompd = require( 'awesompd/awesompd' )
-
-local mpdinstance = awesompd:create()
-mpdinstance.font = "Cica"
-mpdinstance.servers = { { server = '127.0.0.1' , port = '6600' } }
-mpdinstance:register_buttons({ { "", awesompd.MOUSE_LEFT, mpdinstance:command_playpause() },
-                               { "", awesompd.MOUSE_SCROLL_UP, mpdinstance:command_next_track() },
-                               { "", awesompd.MOUSE_SCROLL_DOWN, mpdinstance:command_prev_track() },
-                               { "", awesompd.MOUSE_RIGHT, mpdinstance:command_show_menu() }
-                            })
-mpdinstance:run()
-
 api:add_left_layout( api.get_launcher() )
 local pm = require( "pm2_5" )
 if pm ~= nil then api:add_left_layout( pm:create( nil ) ) end
-api:add_left_layout( mpdinstance.widget )
 
 local launcher = require( 'launcher' )
 
@@ -105,7 +92,6 @@ api:add_center_layout(
     { 'KeePassXC'   , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
     { 'LibreOffice' , 'libreoffice --calc --nologo' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
     { 'Evolution'   , 'evolution'          , '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png'       } ,
-    { 'Ario'        , 'ario'               , '/usr/share/icons/hicolor/48x48/apps/ario.png'                 } ,
   } )
 )
 
