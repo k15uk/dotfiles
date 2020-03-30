@@ -114,9 +114,8 @@ else
   api:add_right_layout( widget:battery( "Battery" , 60 ) )
 end
 
-api:add_right_layout( widget:cpu( "CPU" , 1 ) )
-
 if cocco then
+  api:add_right_layout( widget:cpu( "CPU" , 1 ) )
   api:add_right_layout( widget:cputemp( 10 ) )
   api:add_right_layout( widget:ram( "RAM" , 60 ) )
   api:add_right_layout( widget:swap( "SWAP" , 60 ) )
@@ -156,7 +155,7 @@ end
 if cocco then
   api:set_wibar( 22 )
 else
-  api:set_wibar( 32 )
+  api:set_wibar( 28 )
 end
 
 require( "wallpaper" ):create( 3600 , os.getenv('HOME').."/images/wallpaper" )
