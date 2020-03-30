@@ -105,8 +105,6 @@ local set_mouse_emulate = function()
     { alt, 'i', 1 } ,
     { alt, 'o', 2 } ,
     { alt, 'u', 3 } ,
-    { sup, ',', 8 } ,
-    { sup, '.', 9 } ,
     { sup, 'h', 6 } ,
     { sup, 'j', 5 } ,
     { sup, 'k', 4 } ,
@@ -184,10 +182,8 @@ local set_global_key = function ()
   bindkeys( { sup } , "a" , function () api:get_menu():toggle( { keygrabber = true } ) end )
 
 -- wallpaper
-  if wallpaper:exist_files() then
-    bindkeys( { ctrl , alt } , ',' , function() wallpaper:change( -1 ) end )
-    bindkeys( { ctrl , alt } , '.' , function() wallpaper:change(  1 ) end )
-  end
+  bindkeys( { ctrl , alt } , ',' , function() wallpaper:change( -1 ) end )
+  bindkeys( { ctrl , alt } , '.' , function() wallpaper:change(  1 ) end )
 
   -- tag move
   bindkeys( { sup , shift } , "Escape" , function () launcher:tag_previous() end )
