@@ -59,7 +59,7 @@ api:set_menu( true )
 api:set_launcher()
 
 keybind:set_keybind( terminal_class , terminal_cmd , "/bin/bash byobu new-window" )
-rules:set_opacity( { { class = terminal_class , focus_opacity = 0.85 , normal_opacity = 0.7 } } )
+rules:set_opacity( { { class = terminal_class , focus_opacity = 0.95 , normal_opacity = 0.85 } } )
 
 rules:set_rules()
 
