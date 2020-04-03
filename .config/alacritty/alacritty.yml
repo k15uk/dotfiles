@@ -1,8 +1,5 @@
 scrolling:
   history: 100000
-  auto_scroll: false
-
-tabspaces: 2
 
 font:
   normal:
