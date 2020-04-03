@@ -73,6 +73,7 @@ set noswapfile "スワップファイルをつくらない
 set shell=zsh " shellはzsh使用
 set splitbelow " プレビューウィンドウを下に
 set ambiwidth=double
+set expandtab " スペースによるタブがデフォルト
 
 set inccommand=split
 
@@ -103,7 +104,6 @@ endif
 augroup indentSpaceTab
   autocmd!
   autocmd FileType pug set noexpandtab
-  autocmd FileType lua,coffee,vue,javascript,vim,toml,conf,go,python,java set expandtab
 augroup END
 
 " clean plugins
