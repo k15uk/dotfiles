@@ -67,6 +67,11 @@ api:add_left_layout( api.get_launcher() )
 local pm = require( "pm2_5" )
 if pm ~= nil then api:add_left_layout( pm:create( nil ) ) end
 
+if cocco then
+  local docker = require( 'awesome_docker_container_widget/docker' )
+  api:add_left_layout( docker:create( 'Docker' ) )
+end
+
 local launcher = require( 'launcher' )
 
 local tag_groups = {
