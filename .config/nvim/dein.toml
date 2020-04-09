@@ -135,4 +135,7 @@ hook_add = '''
   vnoremap ,, :TComment<CR>
 '''
 
+[[plugins]]
+repo = 'tpope/vim-surround'
+
 # vim:fenc=utf-8 ff=unix ft=conf
