@@ -22,8 +22,8 @@ theme.menu_width = theme.menu_height * 12
 theme.menu_border_width = 0
 
 -- tag
-theme.master_width_factor = 0.42
-theme.column_count = 2
+theme.master_width_factor = 0.5
+theme.column_count = 1
 
 -- gap
 theme.useless_gap = 0

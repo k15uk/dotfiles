@@ -153,7 +153,7 @@ if cocco then
 end
 
 if cocco then
-  api:set_wibar( 22 )
+  api:set_wibar( 16 )
 else
   api:set_wibar( 28 )
 end
