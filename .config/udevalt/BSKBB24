@@ -1,0 +1,6 @@
+#!/bin/sh
+xkbcomp -I/home/user/.xkb /home/user/.xkb/keymap/BSKBB24_with_xcape :0 2>/dev/null
+pkill xcape
+xcape -e '#134=Alt_R'
+xcape -e '#36=Return'
+xcape -e '#65=space'
