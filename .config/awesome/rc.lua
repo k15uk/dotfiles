@@ -12,17 +12,13 @@ f:close()
 hostname =string.gsub(hostname, "\n$", "")
 
 local cocco
-local terminal_class
-local terminal_cmd
+local terminal_class = 'Terminator'
+local terminal_cmd   = 'terminator'
 
 if hostname == 'cocco' then
   cocco = true
-  terminal_class = 'Alacritty'
-  terminal_cmd   = 'alacritty'
 else
   cocco = false
-  terminal_class = 'Terminator'
-  terminal_cmd   = 'terminator'
 end
 
 api:set_layouts( { require( "awful" ).layout.suit.tile } )
@@ -67,6 +63,11 @@ api:add_left_layout( api.get_launcher() )
 local pm = require( "pm2_5" )
 if pm ~= nil then api:add_left_layout( pm:create( nil ) ) end
 
+if cocco then
+  local docker = require( 'awesome_docker_container_widget/docker' )
+  api:add_left_layout( docker:create( 'Docker' ) )
+end
+
 local launcher = require( 'launcher' )
 
 local tag_groups = {
@@ -82,16 +83,15 @@ launcher:set_tag_groups( tag_groups )
 
 api:add_center_layout(
   launcher:create( {
-    { 'Chromium'    , 'chromium'           , '/usr/share/icons/hicolor/48x48/apps/chromium.png'             } ,
-    { terminal_class, terminal_cmd         , '/usr/share/icons/Adwaita/48x48/legacy/utilities-terminal.png' } ,
-    { 'Pcmanfm'     , 'pcmanfm'            , '/usr/share/icons/Adwaita/48x48/places/folder.png'             } ,
-    { 'Gitg'        , 'gitg'               , '/usr/share/icons/hicolor/48x48/apps/org.gnome.gitg.png'       } ,
-    { 'MySQL'       , 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png'      } ,
-    { 'Gimp'        , 'gimp --no-splash'   , '/usr/share/icons/hicolor/48x48/apps/gimp.png'                 } ,
-    { 'Inkscape'    , 'inkscape'           , '/usr/share/icons/hicolor/48x48/apps/inkscape.png'             } ,
-    { 'KeePassXC'   , 'keepassxc'          , '/usr/share/icons/hicolor/64x64/apps/keepassxc.png'            } ,
-    { 'LibreOffice' , 'libreoffice --calc --nologo' , '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png'     } ,
-    { 'Evolution'   , 'evolution'          , '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png'       } ,
+    { 'Chromium', 'chromium', '/usr/share/icons/hicolor/48x48/apps/chromium.png' } ,
+    { terminal_class, terminal_cmd, '/usr/share/icons/Adwaita/48x48/legacy/utilities-terminal.png' } ,
+    { 'Pcmanfm', 'pcmanfm', '/usr/share/icons/Adwaita/48x48/places/folder.png' } ,
+    { 'Mysql-workbench-bin', 'mysql-workbench'    , '/usr/share/icons/hicolor/48x48/apps/mysql-workbench.png' } ,
+    { 'Gimp', 'gimp --no-splash', '/usr/share/icons/hicolor/48x48/apps/gimp.png' } ,
+    { 'Inkscape', 'inkscape', '/usr/share/icons/hicolor/48x48/apps/inkscape.png' } ,
+    { 'KeePassXC', 'keepassxc', '/usr/share/icons/hicolor/64x64/apps/keepassxc.png' } ,
+    { 'LibreOffice', 'libreoffice --calc --nologo', '/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png' } ,
+    { 'Evolution', 'evolution', '/usr/share/icons/hicolor/48x48/apps/evolution-mail.png' } ,
   } )
 )
 
@@ -153,7 +153,7 @@ if cocco then
 end
 
 if cocco then
-  api:set_wibar( 22 )
+  api:set_wibar( 16 )
 else
   api:set_wibar( 28 )
 end

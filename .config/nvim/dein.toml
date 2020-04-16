@@ -74,127 +74,25 @@ depends = [ 'async.vim' ]
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 depends = [ 'async.vim' ]
-
 hook_add = '''
-au User lsp_setup call <sid>lsp_load()
-
-function! s:lsp_load()
   setlocal omnifunc=lsp#complete
-  nnoremap <silent><C-b> :LspDefinition<CR>
-  nnoremap <silent><C-h> :LspHover<CR>
+  nnoremap <silent><leader>j :LspDefinition<CR>
+  nnoremap <silent><leader>h :LspHover<CR>
   let g:lsp_diagnostics_echo_cursor = 1
   let g:lsp_async_completion = 1
-
-  " Automatically start language servers.
-  let g:LanguageClient_autoStart = 1
-
-  if executable('javascript-typescript-stdio')
-    call lsp#register_server({
-    \ 'name': 'javascript-typescript-stdio',
-    \ 'cmd': {server_info->['javascript-typescript-stdio']},
-    \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-    \ 'whitelist': ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx'],
-    \ })
-  endif
-
-  if executable('php-language-server')
-    call lsp#register_server({
-    \ 'name': 'php-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'php-language-server']},
-    \ 'whitelist': ['php'],
-    \ })
-  endif
-
-  if executable('jdtls')
-    call lsp#register_server({
-    \ 'name': 'jdtls',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'jdtls']},
-    \ 'whitelist': ['java'],
-    \ })
-  endif
-
-  if executable('css-languageserver')
-    call lsp#register_server({
-    \ 'name': 'css-languageserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-    \ 'whitelist': ['css', 'less', 'sass'],
-    \ })
-  endif
-
-  if executable('html-languageserver')
-    call lsp#register_server({
-    \ 'name': 'html-languageserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
-    \ 'whitelist': ['html'],
-    \ })
-  endif
-
-  if executable('bash-language-server')
-    call lsp#register_server({
-    \ 'name': 'bash-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
-    \ 'whitelist': ['sh'],
-    \ })
-  endif
-
-  if executable('json-languageserver')
-    call lsp#register_server({
-    \ 'name': 'json-languageserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'json-languageserver --stdio']},
-    \ 'whitelist': ['json'],
-    \ })
-  endif
-
-  if executable('vls')
-    call lsp#register_server({
-    \ 'name': 'vue-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'vls --stdio']},
-    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
-    \ 'whitelist': ['vue'],
-    \ })
-  endif
-
-  if executable('clangd')
-    call lsp#register_server({
-    \ 'name': 'clangd',
-    \ 'cmd': {server_info->['clangd']},
-    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-    \ })
-  endif
-
-  if executable('lua-lsp')
-    call lsp#register_server({
-    \ 'name': 'lua-lsp',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'lua-lsp']},
-    \ 'whitelist': ['lua'],
-    \ })
-  endif
-
-  if executable('pyls')
-    call lsp#register_server({
-    \ 'name': 'pyls',
-    \ 'cmd': {server_info->['pyls']},
-    \ 'whitelist': ['python'],
-    \ })
-  endif
-
-  if executable('go-langserver')
-    call lsp#register_server({
-    \ 'name': 'go-langserver',
-    \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
-    \ 'whitelist': ['go'],
-    \ })
-  endif
-
-  if executable('solargraph')
-    call lsp#register_server({
-    \ 'name': 'solargraph',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'splargraph stdio']},
-    \ 'whitelist': ['ruby'],
-    \ })
-  endif
-endfunction!
 '''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = [ 'vim-lsp']
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+depends = [ 'vim-lsp']
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+depends = [ 'vim-lsp']
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
@@ -236,5 +134,8 @@ hook_add = '''
   nnoremap ,, :TComment<CR>
   vnoremap ,, :TComment<CR>
 '''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
 
 # vim:fenc=utf-8 ff=unix ft=conf
