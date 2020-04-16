@@ -12,17 +12,13 @@ f:close()
 hostname =string.gsub(hostname, "\n$", "")
 
 local cocco
-local terminal_class
-local terminal_cmd
+local terminal_class = 'Terminator'
+local terminal_cmd   = 'terminator'
 
 if hostname == 'cocco' then
   cocco = true
-  terminal_class = 'Alacritty'
-  terminal_cmd   = 'alacritty'
 else
   cocco = false
-  terminal_class = 'Terminator'
-  terminal_cmd   = 'terminator'
 end
 
 api:set_layouts( { require( "awful" ).layout.suit.tile } )
