@@ -68,11 +68,6 @@ local display_terminal = function ()
   cl.minimized = false
 end
 
--- im toggle
-local im_toggle = function ()
-  awful.spawn.with_shell( '[ $( ibus engine ) = "xkb:us::eng" ] && ibus engine mozc-jp || ibus engine xkb:us::eng' )
-end
-
 -- Key binds
 local bindkeys = function( altkey , key , press , release )
   capi.root.keys( gears.table.join( capi.root.keys() , awful.key( altkey , key , press , release ) ) )
@@ -142,6 +137,7 @@ local set_key_remap = function()
     { ctrl, 'l', 'Right'     } ,
     { ctrl, 'm', 'Return'    } ,
     { ctrl, 'n', 'BackSpace' } ,
+    { ctrl, 'Shift_L', 'Zenkaku_Hankaku' } ,
   }
 
   for _, btn in pairs( remap_keys ) do
@@ -193,10 +189,6 @@ local set_global_key = function ()
   bindkeys( { alt         } , "Escape" , function () launcher:move_to_next_tag() end )
 
   bindkeys( { sup         } , "space"  , function () launcher:move_to_new_tag() end )
-
-  -- ime
-  bindkeys( { ctrl } , 'Shift_L' , function() im_toggle() end )
-  bindkeys( { ctrl } , 'space'   , function() im_toggle() end )
 
   -- screenshot
   bindkeys( { sup } , "p" , function ()
