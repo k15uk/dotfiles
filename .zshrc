@@ -166,7 +166,3 @@ if [[ -t 0 ]]; then
   stty stop undef
   stty start undef
 fi
-
-if test -z "${REMOTEHOST}${SSH_CONNECTION}" -a -z $TMUX; then
-  byobu new-session && exit
-fi
