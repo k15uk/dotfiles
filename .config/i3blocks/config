@@ -1,0 +1,49 @@
+align=center
+separator=true
+separator_block_width=20
+markup=none
+
+[wallpaper]
+command=feh --bg-fill --randomize ~/images/wallpaper/*.jpg
+interval=1800
+
+[brightness]
+label=☀ 
+command=./brightness.sh
+interval=once
+color=#F79494
+signal=1
+
+[pulseaudio label]
+command=/usr/lib/i3blocks/volume-pulseaudio/volume-pulseaudio
+interval=once
+color=#33cc22
+signal=2
+
+# Query my default IP address only on startup
+[wifi]
+label=
+command=$SCRIPT_DIR/wifi/wifi
+instance=wlp0s29u1u7
+interval=1
+color=#91E78B
+
+[public-ip]
+label= 
+command=wget -qO - icanhazip.com | awk '{ print $1 }'
+interval=once
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label=
+interval=1
+min_width=100.00%
+
+[memory]
+command=$SCRIPT_DIR/memory/memory | tail -n 1
+label= 
+interval=30
+
+[time]
+command=date '+%Y/%m/%d %H:%M:%S'
+interval=1
