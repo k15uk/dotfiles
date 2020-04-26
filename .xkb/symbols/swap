@@ -25,9 +25,9 @@ xkb_symbols "BSKBB24_with_xcape" {
   key <I253> { [ space ] };
   modifier_map Shift   { <SPCE>, <LFSH>, <RTSH> };
   key <RTRN> { [ Control_R ] };
-  key <I252> { [ Return] };
+  key <I252> { [ Return ] };
   modifier_map Control { <CAPS>, <LCTL>, <RCTL>, <RTRN> };
-  key <RWIN> { [ Zenkaku_Hankaku ] };
+  key <I251> { [ Zenkaku_Hankaku ] };
 };
 
 partial alphanumeric_keys
@@ -66,8 +66,8 @@ xkb_symbols "TK-FBP067_with_xcape" {
   key <I253> { [ space ] };
   modifier_map Shift   { <SPCE>, <AB11>, <AE13>, <RTSH> };
   key <RTRN> { [ Control_R ] };
-  key <I252> { [ Return] };
+  key <I252> { [ Return ] };
   modifier_map Control { <LCTL>, <RCTL>, <LWIN>, <MENU>, <RALT>, <RTRN> };
-  key <RWIN> { [ Zenkaku_Hankaku ] };
+  key <I251> { [ Zenkaku_Hankaku ] };
 };
 
