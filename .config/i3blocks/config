@@ -20,7 +20,6 @@ interval=once
 color=#33cc22
 signal=2
 
-# Query my default IP address only on startup
 [wifi]
 label=
 command=$SCRIPT_DIR/wifi/wifi
