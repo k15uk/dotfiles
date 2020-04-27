@@ -1,0 +1,25 @@
+URxvt.saveLines: 100000
+URxvt.scrollBar: false
+
+URxvt.geometry: 133x67
+! do not scroll with output
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+
+URxvt.termName: rxvt
+
+URxvt.font: xft:Cica:pixelsize=12:antialias=true:bold=true
+URxvt.letterSpace: -1
+
+! input with IM at cursor position
+URxvt.preeditType: Root
+
+URxvt.colorUL: #4682B4
+
+URxvt.depth: 32
+
+URxvt.background: [80]#000000
+URxvt.foreground: #f8f6f2
+URxvt.cursorColor: #aeee00
+#include ".Xdefaults-local"
