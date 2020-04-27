@@ -25,13 +25,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod + Return exec "terminator"
+bindsym $mod + Return exec "urxvtc"
 
 mode "tmuxalt" {
-  bindsym h split h mode "default" , exec "terminator ; i3-msg move left"
-  bindsym j split v mode "default" , exec "terminator"
-  bindsym k split v mode "default" , exec "terminator ; i3-msg move up"
-  bindsym l split h mode "default" , exec "terminator"
+  bindsym h split h mode "default" , exec "urxvtc ; i3-msg move left"
+  bindsym j split v mode "default" , exec "urxvtc"
+  bindsym k split v mode "default" , exec "urxvtc ; i3-msg move up"
+  bindsym l split h mode "default" , exec "urxvtc"
 
   # back to normal: Enter or Escape or $mod+r
   bindsym Return mode "default"
