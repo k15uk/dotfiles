@@ -111,7 +111,7 @@ bindsym $alt + Tab move container to workspace next , workspace next
 bindsym $alt + $ctrl + Tab move container to workspace prev , workspace prev
 
 # exit i3 (logs you out of your X session)
-bindsym $mod + Shift + e exec "i3-nagbar2-t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod + Shift + e exec "i3-nagbar warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
