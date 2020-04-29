@@ -19,6 +19,11 @@ label=
 interval=10
 min_width=40
 
+[battery]
+label= 
+command=cat /sys/class/power_supply/battery/capacity
+interval=3
+
 [brightness]
 label=☀ 
 command=./brightness.sh
