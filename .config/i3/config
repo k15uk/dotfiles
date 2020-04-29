@@ -129,10 +129,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # mouse action
-bindsym $alt + h exec "xdotool mousemove_relative --clearmodifiers --polar 270 8"
-bindsym $alt + j exec "xdotool mousemove_relative --clearmodifiers --polar 180 8"
-bindsym $alt + k exec "xdotool mousemove_relative --clearmodifiers --polar 0 8"
-bindsym $alt + l exec "xdotool mousemove_relative --clearmodifiers --polar 90 8"
+bindsym $alt + h exec "xdotool mousemove_relative --polar 270 8"
+bindsym $alt + j exec "xdotool mousemove_relative --polar 180 8"
+bindsym $alt + k exec "xdotool mousemove_relative --polar 0 8"
+bindsym $alt + l exec "xdotool mousemove_relative --polar 90 8"
 bindsym $alt + i exec "xdotool click --clearmodifiers 1"
 bindsym $alt + o exec "xdotool click --clearmodifiers 2"
 bindsym $alt + u exec "xdotool click --clearmodifiers 3"
