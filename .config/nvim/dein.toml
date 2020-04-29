@@ -20,16 +20,8 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
 nnoremap <silent><leader>f :call OpenDeniteBufferDirFile()<CR>
-let s:denite_win_width_percent = 0.95
-let s:denite_win_height_percent = 0.4
-
-set pumblend=10
-
-augroup denite_settings
-  autocmd!
-  autocmd FileType denite set winblend=10
-  autocmd FileType denite-filter set winblend=10
-augroup END
+let s:denite_win_width_percent = 1
+let s:denite_win_height_percent = 0.5
 
 function! OpenDeniteBufferDirFile()
   " Update denite default options

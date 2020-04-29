@@ -45,14 +45,14 @@ URxvt*color15: #FFFFFF
 URxvt*skipBuiltinGlyphs: true
 
 ! perl拡張
-URxvt.perl-ext-common: default,url-select,matcher,xim-onthespot
+URxvt.perl-ext-common: default,url-select,xim-onthespot
 
 ! カット・アンド・ペースト
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 
-! クリックできるURL with perl-ext-common "default,matcher"
+! クリックできるURL with perl-ext-common "default"
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 

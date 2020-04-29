@@ -83,14 +83,12 @@ colorscheme zenburn
 " 背景色の設定
 set background=dark
 
-set termguicolors
-
-highlight Normal      ctermbg=black guibg=none
-highlight NormalNC    ctermbg=233   guibg=gray8
-highlight NonText     ctermbg=black guibg=none
-highlight LineNr      ctermbg=black guibg=none
-highlight Folded      ctermbg=black guibg=none
-highlight EndOfBuffer ctermbg=black guibg=none
+highlight Normal      ctermbg=none
+highlight NormalNC    ctermbg=233
+highlight NonText     ctermbg=none
+highlight LineNr      ctermbg=none
+highlight Folded      ctermbg=none
+highlight EndOfBuffer ctermbg=none
 
 " 閉じた後でもundoする
 if has ( 'persistent_undo' )
