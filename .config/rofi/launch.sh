@@ -4,7 +4,7 @@ alpha="cc"   # opacity (00〜FF)
 options=(
   -modi            "drun,system:~/.config/rofi/system_menu.sh,ssh"
   -show            "drun"
-  -font            "Cica 12 "
+  -font            "Noto sans Mono CJK JP 18 "
   -width           "100"
   -fullscreen      true
   -padding         "200"
