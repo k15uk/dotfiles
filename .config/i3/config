@@ -149,7 +149,7 @@ bindsym $mod + l focus right
 bindsym $mod + a focus parent
 bindsym $mod + c focus child
 
-bindsym $mod + p exec "maim -s ~/images/$(date + %s).png"
+bindsym $mod + p exec "maim -s ~/images/$(date +%s).png"
 bindsym $mod + $ctrl + p exec "scrot -u -e 'mv $f ~/images/screenshots/'"
 
 bindsym $mod + Left  move left
