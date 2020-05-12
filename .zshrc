@@ -27,7 +27,8 @@ zgen load zsh-users/zsh-autosuggestions
 zgen load zsh-users/zsh-completions
 zgen load zsh-users/zsh-history-substring-search
 zgen load tarruda/zsh-fuzzy-match
-zgen load Tarrasch/zsh-bd
+zgen load b4b4r07/enhancd
+zgen load zsh-users/zsh-syntax-highlighting
 
 export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
