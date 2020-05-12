@@ -18,6 +18,11 @@ let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 '''
 
+[[plugins]]
+repo = 'lvht/phpcd.vim'
+on_ft = ['php']
+build = 'composer install'
+
 #plantuml
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
