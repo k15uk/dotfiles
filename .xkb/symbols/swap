@@ -24,9 +24,7 @@ xkb_symbols "BSKBB24_with_xcape" {
   key <SPCE> { [ Shift_L ] };
   key <I253> { [ space ] };
   modifier_map Shift   { <SPCE>, <LFSH>, <RTSH> };
-  key <RTRN> { [ Control_R ] };
-  key <I252> { [ Return ] };
-  modifier_map Control { <CAPS>, <LCTL>, <RCTL>, <RTRN> };
+  modifier_map Control { <CAPS>, <LCTL>, <RCTL> };
   key <I251> { [ Zenkaku_Hankaku ] };
 };
 
