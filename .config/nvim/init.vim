@@ -89,6 +89,7 @@ highlight NonText     ctermbg=none
 highlight LineNr      ctermbg=none
 highlight Folded      ctermbg=none
 highlight EndOfBuffer ctermbg=none
+highlight Visual      term=reverse cterm=reverse
 
 " 閉じた後でもundoする
 if has ( 'persistent_undo' )
