@@ -1,16 +1,12 @@
-##Vim プラグイン管理
-####################
-
+## 1. Vim プラグイン管理 ####
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-#colorscheme
+## 2. colorscheme ####
 [[plugins]]
 repo = 'jnurmine/Zenburn'
 
-##vim ユーティリティ
-####################
-
+## 3. vim 拡張 ####
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
@@ -49,7 +45,8 @@ nnoremap <silent><buffer><expr> p     denite#do_map('do_action', 'preview')
 nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 '''
 
-##テキスト編集機能拡張
+## 4. LSP ####
+# 非同期補完
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 
@@ -84,7 +81,7 @@ depends = [ 'vim-lsp']
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 depends = [ 'asyncomplete.vim', 'vim-lsp']
 
-# スニペット
+## 5. スニペット ####
 [[plugins]]
 repo = 'SirVer/ultisnips'
 hook_add = '''
@@ -99,12 +96,14 @@ hook_add = '''
 [[plugins]]
 repo = 'honza/vim-snippets'
 
+# fzf で現在のファイルタイプに応じたスニペットを絞り込み可能
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 hook_add = '''
   nnoremap <silent><c-s> :Snippet<CR>
 '''
 
+## 6. 表示関係 ####
 #bufferをタブバーに表示
 [[plugins]]
 repo = 'ap/vim-buftabline'
@@ -130,11 +129,14 @@ let g:lightline = {
   \ }
 '''
 
+## 0. other
+########
+
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-#コメントをトグル
+# コメント
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
@@ -142,6 +144,7 @@ hook_add = '''
   vnoremap ,, :TComment<CR>
 '''
 
+# surround
 [[plugins]]
 repo = 'tpope/vim-surround'
 
