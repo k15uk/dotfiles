@@ -45,9 +45,9 @@ URxvt*color15: #FFFFFF
 URxvt*skipBuiltinGlyphs: true
 
 ! perl拡張
-URxvt.perl-ext-common: default,url-select,xim-onthespot
+URxvt.perl-ext-common: default,url-select,xim-onthespot,clipboard
 
-! カット・アンド・ペースト
+! カット・アンド・ペースト with perl-ext-common "clipboard"
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
