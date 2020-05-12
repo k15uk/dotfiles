@@ -82,6 +82,27 @@ depends = [ 'vim-lsp']
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 depends = [ 'asyncomplete.vim', 'vim-lsp']
 
+# スニペット
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+  let g:UltiSnipsExpandTrigger="<c-i>"
+  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsSnippetDirectories=['snippets'.'dein/repos/github.com/honza/vim-snippets/UltiSnips']
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+hook_add = '''
+  nnoremap <silent><c-s> :Snippet<CR>
+'''
+
 #bufferをタブバーに表示
 [[plugins]]
 repo = 'ap/vim-buftabline'
