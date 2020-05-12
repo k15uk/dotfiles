@@ -121,6 +121,32 @@ function! Clean_plugins()
   call dein#recache_runtimepath()
 endfunction
 
+" ##########
+" ## 端末 ##
+" ##########
+
+" 端末を開く
+function! ToggleTerminal()
+	if bufexists('terminal')
+    bw! terminal
+    return
+	endif
+  split
+  enew
+  terminal
+	execute ':f terminal'
+  startinsert
+endfunction
+
+augroup terminal
+  autocmd TermOpen * setlocal norelativenumber
+  autocmd TermOpen * setlocal nonumber
+  autocmd TermClose * call feedkeys('\<CR>' )
+augroup END
+
+nnoremap <silent><M-CR> :call ToggleTerminal()<CR>
+tnoremap <silent><M-CR> <C-\><C-n>:call ToggleTerminal()<CR>
+
 " ############
 " # keybinds #
 " ############
