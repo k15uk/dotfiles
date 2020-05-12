@@ -178,12 +178,6 @@ tnoremap <C-w> <C-\><C-n><C-w>
 nnoremap q: <nop>
 nnoremap Q <nop>
 
-" alternate :q
-cabbrev <silent>q call CloseBuffer()
-" alternate :Wq/wq
-command! -nargs=0 Wq w | call CloseBuffer()
-cabbrev <silent>wq Wq
-
 " 開いているバッファを数える
 function! GetBufCount()
   let l:count=0
@@ -211,6 +205,13 @@ endfunction
 " ##########
 " # etc... #
 " ##########
+
+" alternate :q
+cabbrev <silent>q call CloseBuffer()
+" alternate :Wq/wq
+command! -nargs=0 Wq w | call CloseBuffer()
+cabbrev <silent>wq Wq
+
 " auto reload .vimrc
 augroup vimrcautoreload
   autocmd! BufWritePost $MYVIMRC nested source $MYVIMRC
