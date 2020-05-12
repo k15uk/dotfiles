@@ -140,14 +140,6 @@ bindsym $alt + Shift + j exec "xdotool click --clearmodifiers 5"
 bindsym $alt + Shift + k exec "xdotool click --clearmodifiers 4"
 bindsym $alt + Shift + l exec "xdotool click --clearmodifiers 7"
 
-# key action
-bindsym $ctrl + h exec "xdotool key --clearmodifiers Left"
-bindsym $ctrl + j exec "xdotool key --clearmodifiers Down"
-bindsym $ctrl + k exec "xdotool key --clearmodifiers Up"
-bindsym $ctrl + l exec "xdotool key --clearmodifiers Right"
-bindsym $ctrl + m exec "xdotool key --clearmodifiers Return"
-bindsym $ctrl + n exec "xdotool key --clearmodifiers BackSpace"
-
 # focus
 bindsym $mod + h focus left
 bindsym $mod + j focus down
