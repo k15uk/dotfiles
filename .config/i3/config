@@ -173,7 +173,8 @@ mode "move" {
 
 bindsym $mod + m mode "move"
 
-# wallpaper change ( random )
+bindsym $mod + t layout tabbed
+bindsym $mod + s layout splith
 bindsym $ctrl + $alt + comma exec "feh --bg-fill --randomize ~/images/wallpaper/*.jpg" 
 
 # panel
