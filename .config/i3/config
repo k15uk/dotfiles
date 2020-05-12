@@ -24,8 +24,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod + Return exec "urxvtc ; i3-msg layout tabbed"
+bindsym $mod + Return exec "urxvtc"
 
 mode "tmuxalt" {
   bindsym h split h mode "default" , exec "urxvtc ; i3-msg move left"
