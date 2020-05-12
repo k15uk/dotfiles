@@ -49,12 +49,6 @@ nnoremap <silent><buffer><expr> p     denite#do_map('do_action', 'preview')
 nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 '''
 
-[[plugins]]
-repo = 'k15uk/ibus_toggle.vim'
-hook_add = '''
-let g:ibus_toggle_default_im = 'xkb:us::eng'
-'''
-
 ##テキスト編集機能拡張
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
@@ -150,5 +144,12 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# normalモードに切り替え時にibusをdefault_imに切り替え insertモードに切り替え時元のimに戻す
+[[plugins]]
+repo = 'k15uk/ibus_toggle.vim'
+hook_add = '''
+let g:ibus_toggle_default_im = 'xkb:us::eng'
+'''
 
 # vim:fenc=utf-8 ff=unix ft=conf
