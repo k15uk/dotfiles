@@ -19,7 +19,7 @@ build = 'make'
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
-nnoremap <silent><leader>f :call OpenDeniteBufferDirFile()<CR>
+nnoremap <silent>F :call OpenDeniteBufferDirFile()<CR>
 let s:denite_win_width_percent = 1
 let s:denite_win_height_percent = 0.5
 
