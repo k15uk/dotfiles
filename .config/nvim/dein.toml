@@ -62,6 +62,14 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 depends = [ 'async.vim' ]
+hook_add = '''
+  " 補完表示時のEnterで改行をしない
+  inoremap <expr><CR>  pumvisible() ? "<C-y><Esc>a" : "<CR>"
+
+  set completeopt=menuone,noinsert
+  inoremap <expr><C-j> pumvisible() ? "<Down>" : "<C-j>"
+  inoremap <expr><C-k> pumvisible() ? "<Up>" : "<C-k>"
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
