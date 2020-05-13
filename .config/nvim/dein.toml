@@ -81,6 +81,12 @@ depends = [ 'vim-lsp']
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 depends = [ 'asyncomplete.vim', 'vim-lsp']
 
+[[plugins]]
+repo = 'k15uk/lsp_sidebar.vim'
+hook_add = '''
+  nnoremap <S-l> :call lsp_sidebar#toggle()<CR>
+'''
+
 ## 5. スニペット ####
 [[plugins]]
 repo = 'SirVer/ultisnips'
