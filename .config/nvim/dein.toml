@@ -149,6 +149,10 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# 括弧を自動で閉じてくれる
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
 # normalモードに切り替え時にibusをdefault_imに切り替え insertモードに切り替え時元のimに戻す
 [[plugins]]
 repo = 'k15uk/ibus_toggle.vim'
