@@ -159,6 +159,10 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
+# 行末ホワイトスペースの削除
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
 # normalモードに切り替え時にibusをdefault_imに切り替え insertモードに切り替え時元のimに戻す
 [[plugins]]
 repo = 'k15uk/ibus_toggle.vim'
