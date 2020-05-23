@@ -178,7 +178,7 @@ bindsym $mod + t layout tabbed
 bindsym $mod + s layout splith
 
 # Return exec "urxvtc ; i3-msg layout tabbed" wallpaper change ( random )
-bindsym $ctrl + $alt + comma exec "feh --bg-fill --randomize ~/images/wallpaper/*.jpg" 
+bindsym $ctrl + $alt + comma exec --no-startup-id "feh --bg-fill --randomize ~/images/wallpaper/*.jpg"
 
 # panel
 bar {
