@@ -19,7 +19,7 @@ let g:go_doc_keywordprg_enabled = 0
 '''
 
 [[plugins]]
-repo = 'lvht/phpcd.vim'
+repo = 'phpactor/phpactor'
 on_ft = ['php']
 build = 'composer install'
 
