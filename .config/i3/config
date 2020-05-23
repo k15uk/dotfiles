@@ -182,7 +182,7 @@ bindsym $ctrl + $alt + comma exec --no-startup-id "feh --bg-fill --randomize ~/i
 
 # panel
 bar {
-  status_command SCRIPT_DIR=/usr/lib/i3blocks/ i3blocks                              
+  status_command SCRIPT_DIR=/usr/lib/i3blocks/ i3blocks
   position top
 }
 
