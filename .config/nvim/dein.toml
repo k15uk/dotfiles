@@ -54,12 +54,16 @@ repo = 'prabirshrestha/async.vim'
 repo = 'prabirshrestha/asyncomplete.vim'
 depends = [ 'async.vim' ]
 hook_add = '''
+  set completeopt+=preview
+  let g:asyncomplete_smart_completion = 1
+  let g:asyncomplete_auto_popup = 1
+  let g:asyncomplete_remove_duplicates = 1
   " 補完表示時のEnterで改行をしない
-  inoremap <expr><CR>  pumvisible() ? "<C-y><Esc>a" : "<CR>"
-
-  set completeopt=menuone,noinsert
-  inoremap <expr><C-j> pumvisible() ? "<Down>" : "<C-j>"
-  inoremap <expr><C-k> pumvisible() ? "<Up>" : "<C-k>"
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>\<Esc>a" : "\<CR>"
+  inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-j>"
+  inoremap <expr> <C-k> pumvisible() ? "\<Up>" : "\<C-k>"
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 '''
 
 [[plugins]]
@@ -71,6 +75,10 @@ hook_add = '''
   nnoremap <silent><leader>h :LspHover<CR>
   let g:lsp_diagnostics_echo_cursor = 1
   let g:lsp_async_completion = 1
+  set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+  nnoremap <silent><S-h> zc
 '''
 
 [[plugins]]
@@ -158,6 +166,10 @@ repo = 'tpope/vim-surround'
 # 括弧を自動で閉じてくれる
 [[plugins]]
 repo = 'Townk/vim-autoclose'
+hook_add = '''
+  " 補完のキーバインドに割り当てているpumvisible()が挿入される対策
+  let g:AutoClosePreserveDotReg = 0
+'''
 
 # 行末ホワイトスペースの削除
 [[plugins]]
