@@ -84,12 +84,14 @@ colorscheme zenburn
 set background=dark
 
 highlight Normal      ctermbg=none
-highlight NormalNC    ctermbg=233
+highlight NormalNC    ctermbg=238
 highlight NonText     ctermbg=none
 highlight LineNr      ctermbg=none
 highlight Folded      ctermbg=none
 highlight EndOfBuffer ctermbg=none
 highlight Visual      term=reverse cterm=reverse
+highlight IndentGuidesOdd  ctermbg=240
+highlight IndentGuidesEven ctermbg=238
 
 " 閉じた後でもundoする
 if has ( 'persistent_undo' )

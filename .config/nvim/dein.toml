@@ -166,6 +166,13 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# indent guide
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+'''
+
 # 括弧を自動で閉じてくれる
 [[plugins]]
 repo = 'Townk/vim-autoclose'
