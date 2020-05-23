@@ -1,6 +1,9 @@
 ## 1. Vim プラグイン管理 ####
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_add = '''
+  let g:dein#auto_recache = 1
+'''
 
 ## 2. colorscheme ####
 [[plugins]]
