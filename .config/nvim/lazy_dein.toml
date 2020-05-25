@@ -6,10 +6,9 @@ on_ft = [ 'vue' ]
 repo = 'digitaltoad/vim-pug'
 on_ft = [ 'vue' , 'pug' ]
 
-# golang
 [[plugins]]
 repo = 'fatih/vim-go'
-on_ft = ['go']
+on_ft = [ 'go' ]
 hook_source = '''
   " 保存時に必要なimportを自動的に挿入
   let g:go_fmt_command = "goimports"

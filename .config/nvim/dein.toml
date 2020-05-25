@@ -147,7 +147,7 @@ let g:lightline = {
   \ }
 '''
 
-## 0. other
+## 0. other ####
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
