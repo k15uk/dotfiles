@@ -19,6 +19,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'phpactor/phpactor'
+on_ft = [ 'php' ]
 build = 'composer install'
 
 [[plugins]]
@@ -27,4 +28,5 @@ on_ft = [ 'toml' ]
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
+on_ft = [ 'uml' , 'plantuml' ]
 # vim:fenc=utf-8 ff=unix ft=toml
