@@ -18,34 +18,34 @@ build = 'make'
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
-nnoremap <silent>F :call OpenDeniteBufferDirFile()<CR>
-let s:denite_win_width_percent = 1
-let s:denite_win_height_percent = 0.5
+  nnoremap <silent>F :call OpenDeniteBufferDirFile()<CR>
+  let s:denite_win_width_percent = 1
+  let s:denite_win_height_percent = 0.5
 
-function! OpenDeniteBufferDirFile()
-  " Update denite default options
-  call denite#custom#option('default', {
-    \ 'split': 'floating',
-    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
-    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
-    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
-    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) - 2),
-    \ })
-  DeniteBufferDir file file:new
-  highlight NormalFloat ctermbg=black guibg=none
-endfunction
+  function! OpenDeniteBufferDirFile()
+    " Update denite default options
+    call denite#custom#option('default', {
+      \ 'split': 'floating',
+      \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+      \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+      \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+      \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) - 2),
+      \ })
+    DeniteBufferDir file file:new
+    highlight NormalFloat ctermbg=black guibg=none
+  endfunction
 '''
 
 [plugins.ftplugin]
 denite = '''
-nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
-nnoremap <silent><buffer><expr> l     denite#do_map('do_action')
-nnoremap <silent><buffer><expr> <BS>  denite#do_map('move_up_path')
-nnoremap <silent><buffer><expr> h     denite#do_map('move_up_path')
-nnoremap <silent><buffer><expr> <esc> denite#do_map('quit')
-nnoremap <silent><buffer><expr> q     denite#do_map('quit')
-nnoremap <silent><buffer><expr> p     denite#do_map('do_action', 'preview')
-nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> l     denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> <BS>  denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> h     denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> <esc> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> q     denite#do_map('quit')
+  nnoremap <silent><buffer><expr> p     denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 '''
 
 ## 4. LSP ####
@@ -187,7 +187,7 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'k15uk/ibus_toggle.vim'
 hook_add = '''
-let g:ibus_toggle_default_im = 'xkb:us::eng'
+  let g:ibus_toggle_default_im = 'xkb:us::eng'
 '''
 
 # vim:fenc=utf-8 ff=unix ft=conf
