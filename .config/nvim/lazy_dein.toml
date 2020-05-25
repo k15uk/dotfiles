@@ -20,10 +20,9 @@ hook_source = '''
 
 [[plugins]]
 repo = 'phpactor/phpactor'
-on_ft = ['php']
 build = 'composer install'
 
-#plantuml
+
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
-# vim:fenc=utf-8 ff=unix ft=conf
+# vim:fenc=utf-8 ff=unix ft=toml

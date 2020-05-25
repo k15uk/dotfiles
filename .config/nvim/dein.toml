@@ -190,4 +190,4 @@ hook_add = '''
   let g:ibus_toggle_default_im = 'xkb:us::eng'
 '''
 
-# vim:fenc=utf-8 ff=unix ft=conf
+# vim:fenc=utf-8 ff=unix ft=toml
