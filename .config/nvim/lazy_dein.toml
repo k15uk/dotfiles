@@ -22,6 +22,9 @@ hook_source = '''
 repo = 'phpactor/phpactor'
 build = 'composer install'
 
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = [ 'toml' ]
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
