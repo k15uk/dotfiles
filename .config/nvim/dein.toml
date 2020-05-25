@@ -121,6 +121,14 @@ hook_add = '''
   nnoremap <silent><c-s> :Snippet<CR>
 '''
 
+[[plugins]]
+repo = 'thomasfaingnaert/vim-lsp-snippets'
+depends = [ 'vim-lsp' ]
+
+[[plugins]]
+repo = 'thomasfaingnaert/vim-lsp-ultisnips'
+depends = [ 'ultisnips' , 'async.vim' , 'vim-lsp' ]
+
 ## 6. 表示関係 ####
 #bufferをタブバーに表示
 [[plugins]]
