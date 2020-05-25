@@ -163,9 +163,10 @@ repo = 'airblade/vim-gitgutter'
 # コメント
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+depends = [ 'vim-precious' ]
 hook_add = '''
-  nnoremap ,, :TComment<CR>
-  vnoremap ,, :TComment<CR>
+  nnoremap ,, :PreciousSwitch<CR>:TComment<CR>:PreciousReset<CR>
+  vnoremap ,, :PreciousSwitch<CR>:TComment<CR>:PreciousReset<CR>
 '''
 
 # surround
@@ -187,6 +188,24 @@ hook_add = '''
   let g:AutoClosePreserveDotReg = 0
 '''
 
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# カーソル位置に応じてファイルタイプの自動切り替え
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = [ 'vim-quickrun' , 'context_filetype.vim' ]
+hook_add = '''
+  let g:precious_enable_switch_CursorMoved = { '*': 0 }
+  augroup test
+		autocmd!
+		autocmd InsertEnter * :PreciousSwitch
+		autocmd InsertLeave * :PreciousReset
+	augroup END
+'''
 # 行末ホワイトスペースの削除
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
