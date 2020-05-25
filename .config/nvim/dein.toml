@@ -206,6 +206,10 @@ hook_add = '''
 		autocmd InsertLeave * :PreciousReset
 	augroup END
 '''
+
+[[plugins]]
+repo = 'gko/vim-coloresque'
+
 # 行末ホワイトスペースの削除
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
