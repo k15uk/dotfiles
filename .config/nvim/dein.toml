@@ -208,6 +208,13 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+hook_add = '''
+  nnoremap tt :TableModeToggle<cr>
+  nnoremap tr :TableModeRealign<cr>
+'''
+
+[[plugins]]
 repo = 'gko/vim-coloresque'
 
 # 行末ホワイトスペースの削除
