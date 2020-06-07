@@ -10,6 +10,16 @@ xkb_symbols "pcswap" {
   include "swap(escape-tilde)"
   modifier_map Control { <LCTL>, <RCTL> };
 };
+partial alphanumeric_keys
+xkb_symbols "pc_with_xcape" {
+  include "swap(escape-tilde)"
+  modifier_map Control { <LCTL>, <RCTL> };
+  key <SPCE> { [ Shift_L ] };
+  key <I253> { [ space ] };
+  modifier_map Shift   { <SPCE>, <LFSH>, <RTSH> };
+  modifier_map Control { <CAPS>, <LCTL>, <RCTL> };
+  key <I251> { [ Zenkaku_Hankaku ] };
+};
 
 partial alphanumeric_keys
 xkb_symbols "BSKBB24" {
