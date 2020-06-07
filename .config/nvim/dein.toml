@@ -44,10 +44,6 @@ hook_add = '''
   nnoremap <silent><leader>h :LspHover<CR>
   let g:lsp_diagnostics_echo_cursor = 1
   let g:lsp_async_completion = 1
-  set foldmethod=expr
-  \ foldexpr=lsp#ui#vim#folding#foldexpr()
-  \ foldtext=lsp#ui#vim#folding#foldtext()
-  nnoremap <silent><S-h> zc
 '''
 
 [[plugins]]
