@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
-hook_add = '''
+hook_source = '''
   let s:denite_win_width_percent = 1
   let s:denite_win_height_percent = 0.5
 
@@ -14,11 +14,6 @@ hook_add = '''
     \ } )
 
   highlight NormalFloat ctermbg=black guibg=none
-
-  nnoremap <silent>F :DeniteBufferDir -buffer-name=file file file:new<CR>
-  nnoremap <silent>b :DeniteProjectDir buffer<CR>
-  nnoremap <silent>f :DeniteProjectDir file/rec -start-filter<CR>
-
   call denite#custom#source( 'file', 'sorters', [ 'sorter/word' ] )
   call denite#custom#option( 'file', {
     \ 'split':     'floating',
@@ -30,6 +25,12 @@ hook_add = '''
 
   call denite#custom#source( 'file/rec', 'sorters', [ 'sorter/word' ] )
   call denite#custom#source( 'file/rec', 'matchers', [ 'matcher/fuzzy' ] )
+'''
+
+hook_add = '''
+  nnoremap <silent>F :DeniteBufferDir -buffer-name=file file file:new<CR>
+  nnoremap <silent>b :DeniteProjectDir buffer<CR>
+  nnoremap <silent>f :DeniteProjectDir file/rec -start-filter<CR>
 
   autocmd FileType denite-filter call s:denite_filter_settings()
   function! s:denite_filter_settings() abort
