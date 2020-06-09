@@ -1,4 +1,4 @@
 #!/bin/sh
 pkill xcape
 xkbcomp -I/home/user/.xkb /home/user/.xkb/keymap/BSKBB24_with_xcape :0 2>/dev/null
-xcape -e '#133=Zenkaku_Hankaku;#134=Zenkaku_Hankaku;#66=BackSpace;#36=Return;#65=space'
+xcape -d -e '#133=Zenkaku_Hankaku;#134=Zenkaku_Hankaku;#65=space'

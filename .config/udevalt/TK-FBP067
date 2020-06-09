@@ -1,6 +1,4 @@
 #!/bin/sh
 xkbcomp -I/home/user/.xkb /home/user/.xkb/keymap/TK-FBP067_with_xcape :0 2>/dev/null
 pkill xcape
-xcape -e '#134=Alt_R'
-xcape -e '#36=Return'
-xcape -e '#65=space'
+xcape -d -e '#133=Zenkaku_Hankaku;#134=Zenkaku_Hankaku;#65=space'
