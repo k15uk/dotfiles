@@ -7,6 +7,12 @@ align=right
 command=feh --bg-fill --randomize ~/images/wallpaper/*.jpg
 interval=1800
 
+[mediaplayer]
+command=$SCRIPT_DIR/mediaplayer/mediaplayer
+instance=rhythmbox
+interval=5
+signal=3
+
 [cpu_usage]
 command=$SCRIPT_DIR/cpu_usage/cpu_usage
 label= 
@@ -31,8 +37,9 @@ interval=once
 color=#F79494
 signal=1
 
-[pulseaudio label]
+[pulseaudio]
 command=$SCRIPT_DIR/volume-pulseaudio/volume-pulseaudio
+MIXER=jackplug
 interval=once
 color=#33cc22
 signal=2

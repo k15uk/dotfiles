@@ -177,6 +177,16 @@ bindsym $mod + m mode "move"
 bindsym $mod + t layout tabbed
 bindsym $mod + s layout splith
 
+# Pulseaudio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse sset Master 5%+    && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse sset Master 5%-    && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioMute        exec --no-startup-id amixer -q -D pulse sset Master toggle && pkill -RTMIN+2 i3blocks
+
+# Media player controls
+bindsym XF86AudioPlay exec $( [ $( ps aux | grep rhythmbox | grep -v grep | wc -l ) = '0' ] && rhythmbox || $( [ $( playerctl status ) = 'Playing' ] && playerctl stop || playerctl play-pause ) ) && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioNext exec playerctl next     && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioPrev exec playerctl previous && pkill -RTMIN+3 i3blocks
+
 # Return exec "urxvtc ; i3-msg layout tabbed" wallpaper change ( random )
 bindsym $ctrl + $alt + comma exec --no-startup-id "feh --bg-fill --randomize ~/images/wallpaper/*.jpg"
 
