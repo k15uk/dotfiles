@@ -62,7 +62,6 @@ set ignorecase "大文字小文字の区別なし
 set number "行番号をつける
 set laststatus=2 "常にステイタスバーを表示
 set hlsearch
-set showtabline=2 " 常にタブ表示
 set mouse=a "マウスの使用可
 set lazyredraw "コマンド実行中の再描画を行わない
 set ttyfast
@@ -169,10 +168,6 @@ nnoremap x "_x
 nnoremap s <Nop>
 nnoremap <C-z> <Nop>
 
-" バッファの移動
-nnoremap <silent><Tab>   :bnext<CR>
-nnoremap <silent><S-Tab> :bprev<CR>
-
 " ウインドウの移動のモード差異をなくす
 inoremap <C-w> <Esc><C-w>
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -181,39 +176,12 @@ tnoremap <C-w> <C-\><C-n><C-w>
 nnoremap q: <nop>
 nnoremap Q <nop>
 
-" 開いているバッファを数える
-function! GetBufCount()
-  let l:count=0
-  for i in range( 1 , bufnr('$') )
-    if buflisted(i)
-      let l:count = l:count + 1
-    endif
-  endfor
-  return l:count
-endfunction
+nnoremap II :<C-u>edit $MYVIMRC<CR>
 
-function! CloseBuffer()
-  " q: ( command line window ) を閉じる
-  if getcmdwintype()!=''
-    quit
-  " 最後のバッファならvimごと閉じる
-  elseif GetBufCount()<=1
-    quit
-  " バッファを閉じる
-  else
-    bd
-  endif
-endfunction
 
 " ##########
 " # etc... #
 " ##########
-
-" alternate :q
-cabbrev <silent>q call CloseBuffer()
-" alternate :Wq/wq
-command! -nargs=0 Wq w | call CloseBuffer()
-cabbrev <silent>wq Wq
 
 " auto reload .vimrc
 augroup vimrcautoreload

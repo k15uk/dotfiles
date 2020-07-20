@@ -19,8 +19,8 @@ hook_source = '''
     \ 'split':     'floating',
     \ 'winwidth':  float2nr( &columns / 4 ),
     \ 'wincol':    0,
-    \ 'winheight': float2nr( &lines * 1 ) - 3,
-    \ 'winrow':    1,
+    \ 'winheight': float2nr( &lines * 1 ) - 2,
+    \ 'winrow':    0,
     \ } )
 
   call denite#custom#source( 'file/rec', 'sorters', [ 'sorter/word' ] )

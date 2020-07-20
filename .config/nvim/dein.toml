@@ -108,10 +108,6 @@ repo = 'thomasfaingnaert/vim-lsp-ultisnips'
 depends = [ 'ultisnips' , 'async.vim' , 'vim-lsp' ]
 
 ## 6. 表示関係 ####
-#bufferをタブバーに表示
-[[plugins]]
-repo = 'ap/vim-buftabline'
-
 #ステータスライン表示拡張
 [[plugins]]
 repo = 'itchyny/lightline.vim'
