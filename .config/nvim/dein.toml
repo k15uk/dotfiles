@@ -14,8 +14,7 @@ repo = 'jnurmine/Zenburn'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-## 4. LSP ####
-# 非同期補完
+## 4. LSP / 補完 ###
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 
@@ -40,10 +39,33 @@ repo = 'prabirshrestha/vim-lsp'
 depends = [ 'async.vim' ]
 hook_add = '''
   setlocal omnifunc=lsp#complete
-  nnoremap <silent><leader>j :LspDefinition<CR>
-  nnoremap <silent><leader>h :LspHover<CR>
+  nnoremap <silent>L :LspDocumentSymbol<CR>
+  nnoremap <silent><c-i> :LspDefinition<CR>
+  nnoremap <silent>H :LspHover<CR>
+  nnoremap <silent>E :LspNextError<CR>
+  nnoremap <silent>W :LspNextWarning<CR>
+
+  let g:lsp_diagnostics_enabled = 1
   let g:lsp_diagnostics_echo_cursor = 1
   let g:lsp_async_completion = 1
+
+  let g:lsp_signs_enabled = 1
+  let g:lsp_virtual_text_enabled = 1
+  let g:lsp_signs_error = {'text': '✗'}
+  let g:lsp_signs_warning = {'text': '‼'}
+  let g:lsp_signs_information = {'text': 'i'}
+  let g:lsp_signs_hint = {'text': '?'}
+
+  augroup VimLspSettings
+    autocmd!
+    autocmd BufWritePre <buffer> LspDocumentFormatSync
+    autocmd FileType qf call s:lsp_quickfix_setting()
+  augroup END
+
+  function! s:lsp_quickfix_setting() abort
+    nnoremap <Esc> :close<CR>
+    nnoremap <buffer> <cr> <cr>:cclose<cr>
+  endfunction
 '''
 
 [[plugins]]
@@ -53,12 +75,6 @@ depends = [ 'vim-lsp']
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 depends = [ 'asyncomplete.vim', 'vim-lsp']
-
-[[plugins]]
-repo = 'k15uk/lsp_sidebar.vim'
-hook_add = '''
-  nnoremap <S-l> :call lsp_sidebar#toggle()<CR>
-'''
 
 ## 5. スニペット ####
 [[plugins]]
