@@ -137,10 +137,9 @@ repo = 'airblade/vim-gitgutter'
 # コメント
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-depends = [ 'vim-precious' ]
 hook_add = '''
-  nnoremap ,, :PreciousSwitch<CR>:TComment<CR>:PreciousReset<CR>
-  vnoremap ,, :PreciousSwitch<CR>:TComment<CR>:PreciousReset<CR>
+  nnoremap ,, :TComment<CR>
+  vnoremap ,, :TComment<CR>
 '''
 
 # surround
@@ -163,37 +162,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-# カーソル位置に応じてファイルタイプの自動切り替え
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = [ 'vim-quickrun' , 'context_filetype.vim' ]
-hook_add = '''
-  let g:precious_enable_switch_CursorMoved = { '*': 0 }
-  augroup test
-		autocmd!
-		autocmd InsertEnter * :PreciousSwitch
-		autocmd InsertLeave * :PreciousReset
-	augroup END
-'''
-
-[[plugins]]
-repo = 'dhruvasagar/vim-table-mode'
-hook_add = '''
-  nnoremap tt :TableModeToggle<cr>
-  nnoremap tr :TableModeRealign<cr>
-'''
-
-[[plugins]]
 repo = 'gko/vim-coloresque'
-
-# 行末ホワイトスペースの削除
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
 
 # normalモードに切り替え時にibusをdefault_imに切り替え insertモードに切り替え時元のimに戻す
 [[plugins]]
