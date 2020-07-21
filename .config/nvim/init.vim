@@ -186,6 +186,8 @@ cnoremap <expr><Up> pumvisible() ? "<C-p>" : "<Up>"
 " auto reload .vimrc
 augroup vimrcautoreload
   autocmd! BufWritePost $MYVIMRC nested source $MYVIMRC
+  autocmd! BufWritePost s:toml nested call dein#load_toml( s:toml , { 'lazy' : 0 } )
+  autocmd! BufWritePost s:lazy_toml nested call dein#load_toml( s:lazy_toml , { 'lazy' : 1 } )
 augroup END
 
 augroup autoreload
