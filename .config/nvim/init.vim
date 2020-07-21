@@ -175,6 +175,9 @@ nnoremap Q <nop>
 
 nnoremap II :<C-u>edit $MYVIMRC<CR>
 
+" コマンド補完で上下キー押下時、補完候補を移動する
+cnoremap <expr><Down> pumvisible() ? "<C-n>" : "<Down>"
+cnoremap <expr><Up> pumvisible() ? "<C-p>" : "<Up>"
 
 " ##########
 " # etc... #

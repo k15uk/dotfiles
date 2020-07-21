@@ -1,6 +1,7 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
+on_cmd = [ 'Denite', 'DeniteBufferDir', 'DeniteCursorWord', 'DeniteProjectDir' ]
+hook_install = ':UpdateRemotePlugins'
 hook_source = '''
   let s:denite_win_width_percent = 1
   let s:denite_win_height_percent = 0.5
@@ -29,8 +30,14 @@ hook_source = '''
 
 hook_add = '''
   nnoremap <silent>F :DeniteBufferDir -buffer-name=file file file:new<CR>
-  nnoremap <silent>b :DeniteProjectDir buffer<CR>
-  nnoremap <silent>f :DeniteProjectDir file/rec -start-filter<CR>
+  nnoremap <silent><Tab>   :Denite buffer<CR> :call Denite_settings()<CR>
+  nnoremap <silent><S-Tab> :Denite buffer<CR> :call Denite_settings()<CR>
+
+  function! Denite_settings() abort
+    nnoremap <silent><buffer><expr> <Tab> (line('.') == line('$')) ? 'gg' : 'j'
+    nnoremap <silent><buffer><expr> <S-Tab> (line('.') == '1' ) ? 'G' : 'k'
+    nnoremap <silent><buffer> h     :execute ':bwipeout ' split( getline( line('.')) , '\s\+' )[2]<CR>:close<CR>
+  endfunction
 
   autocmd FileType denite-filter call s:denite_filter_settings()
   function! s:denite_filter_settings() abort
@@ -40,9 +47,10 @@ hook_add = '''
 
 [plugins.ftplugin]
 denite = '''
+  nnoremap <silent><buffer><expr> <CR>  denite#do_map( 'do_action' )
   nnoremap <silent><buffer><expr> l     denite#do_map( 'do_action' )
   nnoremap <silent><buffer><expr> h     denite#do_map( 'move_up_path' )
-  nnoremap <silent><buffer><expr> <esc> denite#do_map( 'quit' )
+  nnoremap <silent><buffer><expr> <Esc> denite#do_map( 'quit' )
   nnoremap <silent><buffer><expr> i     denite#do_map( 'open_filter_buffer' )
 '''
 
