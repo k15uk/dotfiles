@@ -115,17 +115,12 @@ hook_add = '''
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'active': {
-  \   'left'  : [ [ 'mode', 'paste' ],
-  \               [ 'filename' , 'readonly'],
-  \               [ 'modified' ]
-  \             ],
-  \    'right' : [ [ 'lineinfo'],
-  \               [ 'percent' ],
-  \               [ 'fileencoding', 'fileformat', 'filetype' ]
-  \             ],
-  \           },
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
   \ 'component_function': {
-  \   },
+  \   'gitbranch': 'FugitiveHead'
+  \ },
   \ }
 '''
 
@@ -133,6 +128,9 @@ let g:lightline = {
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 # コメント
 [[plugins]]
