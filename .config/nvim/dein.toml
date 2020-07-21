@@ -96,7 +96,7 @@ repo = 'honza/vim-snippets'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 hook_add = '''
-  nnoremap <silent><c-s> :Snippet<CR>
+  nnoremap <silent>s :Snippet<CR>
 '''
 
 [[plugins]]

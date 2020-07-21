@@ -164,9 +164,6 @@ vnoremap <silent>k gk
 
 " xでレジスタを汚さない
 nnoremap x "_x
-" 無効化
-nnoremap s <Nop>
-nnoremap <C-z> <Nop>
 
 " ウインドウの移動のモード差異をなくす
 inoremap <C-w> <Esc><C-w>
