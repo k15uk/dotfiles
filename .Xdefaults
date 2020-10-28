@@ -43,7 +43,7 @@ URxvt*fading: 30
 URxvt*skipBuiltinGlyphs: true
 
 ! perl拡張
-URxvt.perl-ext-common: default,url-select,xim-onthespot,clipboard,resize-font
+URxvt.perl-ext-common: default,url-select,xim-onthespot,clipboard
 
 ! カット・アンド・ペースト with perl-ext-common "clipboard"
 URxvt.clipboard.autocopy: true
@@ -62,9 +62,5 @@ URxvt.url-select.launcher: /usr/bin/xdg-open
 ! インプットメソッドのインライン表示 with perl-ext-common "xim-onthespot"
 URxvt.inputMethod: ibus
 URxvt.preeditType: OnTheSpot
-
-! フォントサイズ変更 with perl-ext-common "resize-font"
-URxvt.keysym.C-Down: resize-font:smaller
-URxvt.keysym.C-Up: resize-font:bigger
 
 #include ".Xdefaults-local"
