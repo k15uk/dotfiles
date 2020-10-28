@@ -129,17 +129,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # mouse action
-bindsym $alt+h exec "xdotool mousemove_relative --polar 270 8"
-bindsym $alt+j exec "xdotool mousemove_relative --polar 180 8"
-bindsym $alt+k exec "xdotool mousemove_relative --polar 0 8"
-bindsym $alt+l exec "xdotool mousemove_relative --polar 90 8"
-bindsym $alt+i exec "xdotool click --clearmodifiers 1"
-bindsym $alt+o exec "xdotool click --clearmodifiers 2"
-bindsym $alt+u exec "xdotool click --clearmodifiers 3"
-bindsym $alt+Shift+h exec "xdotool click --clearmodifiers 6"
-bindsym $alt+Shift+j exec "xdotool click --clearmodifiers 5"
-bindsym $alt+Shift+k exec "xdotool click --clearmodifiers 4"
-bindsym $alt+Shift+l exec "xdotool click --clearmodifiers 7"
+bindsym $alt+h exec "ydotool mousemove_relative -- -8 0"
+bindsym $alt+j exec "ydotool mousemove_relative -- 0 8"
+bindsym $alt+k exec "ydotool mousemove_relative -- 0 -8"
+bindsym $alt+l exec "ydotool mousemove_relative -- 8 0"
+bindsym $alt+i exec "ydotool click 1"
+bindsym $alt+o exec "ydotool click 2"
+bindsym $alt+u exec "ydotool click 3"
+bindsym $alt+Shift+h exec "ydotool click 6"
+bindsym $alt+Shift+j exec "ydotool click 5"
+bindsym $alt+Shift+k exec "ydotool click 4"
+bindsym $alt+Shift+l exec "ydotool click 7"
 
 # focus
 bindsym $mod+h focus left
@@ -152,8 +152,8 @@ bindsym $mod+c focus child
 
 focus_follows_mouse no
 
-bindsym $mod+p exec "maim -s ~/images/$(date +%s).png"
-bindsym $mod+$ctrl+p exec "scrot -u -e 'mv $f ~/images/screenshots/'"
+bindsym $mod+p exec 'grim -g "$(slurp)" ~/images/$(date +%s).png'
+bindsym $mod+$ctrl+p exec "grim ~/images/$(date +%s).png"
 
 bindsym $mod+Left  move left
 bindsym $mod+Down  move down
@@ -188,7 +188,7 @@ bindsym XF86AudioNext exec playerctl next     && pkill -RTMIN+3 i3blocks
 bindsym XF86AudioPrev exec playerctl previous && pkill -RTMIN+3 i3blocks
 
 # Return exec "urxvtc ; i3-msg layout tabbed" wallpaper change ( random )
-bindsym $ctrl+$alt+comma exec --no-startup-id "feh --bg-fill --randomize ~/images/wallpaper/*.jpg"
+bindsym $ctrl+$alt+comma exec --no-startup-id "swaybg -i $( find ~/images/wallpaper/ -type f -name \"*.jpg\" | shuf | head -n 1 )"
 
 # colors
 set $color_1 #000000
