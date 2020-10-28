@@ -8,7 +8,8 @@ URxvt*scrollTtyKeypress: true
 
 URxvt.termName: rxvt
 
-URxvt.font: xft:Noto sans Mono CJK JP:pixelsize=12:antialias=true:bold=true
+URxvt.font: xft:Noto sans Mono CJK JP:pixelsize=14:antialias=true:bold=true
+URxvt*xftAntialias: true
 URxvt.letterSpace: -3
 
 URxvt.depth: 32
