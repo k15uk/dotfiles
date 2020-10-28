@@ -4,7 +4,7 @@ markup=none
 align=right
 
 [wallpaper]
-command=feh --bg-fill --randomize ~/images/wallpaper/*.jpg
+command=swaybg -i $( find ~/images/wallpaper/ -type f -name "*.jpg" | shuf | head -n 1 )
 interval=1800
 
 [mediaplayer]
