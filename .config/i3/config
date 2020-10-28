@@ -237,5 +237,5 @@ assign [class="Gitg"                   ] $ws4
 assign [class="Mysql-workbench-bin"    ] $ws5
 assign [class="jetbrains-idea-ce"      ] $ws6
 assign [class="Ario|Rhythmbox|Easytag" ] $ws7
-assign [class="Evolution"              ] $ws8
+assign [class="Thunderbird"            ] $ws8
 assign [class="Skype|Pidgin"           ] $ws9
