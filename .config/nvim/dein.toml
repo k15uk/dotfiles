@@ -8,11 +8,14 @@ hook_add = '''
 ## 2. colorscheme ####
 [[plugins]]
 repo = 'jnurmine/Zenburn'
+hook_add = '''
+  colorscheme zenburn
+'''
 
 ## 3. vim 拡張 ####
+# edit history, Undo/Redo history
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+repo = 'sjl/gundo.vim'
 
 ## 4. LSP / 補完 ###
 [[plugins]]
@@ -40,7 +43,7 @@ depends = [ 'async.vim' ]
 hook_add = '''
   setlocal omnifunc=lsp#complete
   nnoremap <silent>L :LspDocumentSymbol<CR>
-  nnoremap <silent><c-i> :LspDefinition<CR>
+  nnoremap <silent><c-l> :LspDefinition<CR>
   nnoremap <silent>H :LspHover<CR>
   nnoremap <silent>E :LspNextError<CR>
   nnoremap <silent>W :LspNextWarning<CR>
@@ -132,6 +135,15 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# リファレンスビューワー
+[[plugins]]
+repo = 'sunaku/vim-dasht'
+hook_add = '''
+  nnoremap <silent>K :call Dasht( dasht#cursor_search_terms() )<CR>
+  vnoremap <silent>K y:<C-U>call Dasht( getreg(0) )<CR>
+  let g:dasht_results_window = 'enew'
+'''
+
 # コメント
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -159,8 +171,22 @@ hook_add = '''
   let g:AutoClosePreserveDotReg = 0
 '''
 
+# カラーコードに応じて着色
 [[plugins]]
 repo = 'gko/vim-coloresque'
+
+[[plugins]]
+# 翻訳
+repo = 'VincentCordobes/vim-translate'
+hook_add = '''
+  let g:translate#default_languages = {
+      \ 'ja': 'en',
+      \ 'en': 'ja'
+      \ }
+  nnoremap <silent> T :Translate<CR>
+  vnoremap <silent> T :TranslateVisual<CR>
+  vnoremap <silent> R :TranslateReplace<CR>
+'''
 
 # normalモードに切り替え時にibusをdefault_imに切り替え insertモードに切り替え時元のimに戻す
 [[plugins]]

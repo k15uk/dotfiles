@@ -1,3 +1,4 @@
+### denite ###
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = [ 'Denite', 'DeniteBufferDir', 'DeniteCursorWord', 'DeniteProjectDir' ]
@@ -54,35 +55,36 @@ denite = '''
   nnoremap <silent><buffer><expr> i     denite#do_map( 'open_filter_buffer' )
 '''
 
+### 各言語ごとの設定 ###
+
 [[plugins]]
+# syntax for vue
 repo = 'posva/vim-vue'
 on_ft = [ 'vue' ]
 
 [[plugins]]
+# syntax for pug
 repo = 'digitaltoad/vim-pug'
 on_ft = [ 'vue' , 'pug' ]
 
 [[plugins]]
-repo = 'fatih/vim-go'
-on_ft = [ 'go' ]
-hook_source = '''
-  " 保存時に必要なimportを自動的に挿入
-  let g:go_fmt_command = "goimports"
-  " LSPに任せる機能をOFFにする
-  let g:go_def_mapping_enabled = 0
-  let g:go_doc_keywordprg_enabled = 0
-'''
+# syntax and autocomplete for stylus
+repo = 'iloginow/vim-stylus'
+on_ft = [ 'vue' , 'stylus' ]
 
 [[plugins]]
-repo = 'phpactor/phpactor'
-on_ft = [ 'php' ]
-build = 'composer install'
-
-[[plugins]]
+# syntax for toml
 repo = 'cespare/vim-toml'
 on_ft = [ 'toml' ]
 
 [[plugins]]
+# syntax for plantuml
 repo = 'aklt/plantuml-syntax'
 on_ft = [ 'uml' , 'plantuml' ]
+
+[[plugins]]
+# SQL formatter
+repo = 'mattn/vim-sqlfmt'
+on_cmd = [ 'SQLfmt' ]
+
 # vim:fenc=utf-8 ff=unix ft=toml
