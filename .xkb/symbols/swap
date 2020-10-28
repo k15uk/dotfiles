@@ -12,7 +12,8 @@ xkb_symbols "pcswap" {
 };
 partial alphanumeric_keys
 xkb_symbols "pc_with_xcape" {
-  include "swap(escape-tilde)"
+  key <CAPS> { [ Control_L, asciitilde ] };
+  modifier_map Control { <CAPS> };
   modifier_map Control { <LCTL>, <RCTL> };
   key <SPCE> { [ Shift_L ] };
   key <I253> { [ space ] };
